@@ -1,0 +1,25 @@
+@use "../abstracts/" as *;
+
+.active-img {
+  border: 2px solid $pry-orange;
+  opacity: 0.45;
+}
+
+.hidden {
+  display: none;
+}
+
+.mobile {
+  display: none;
+  @include mq(640px) {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+}
+
+.desktop {
+  @include mq(640px) {
+    display: none;
+  }
+}

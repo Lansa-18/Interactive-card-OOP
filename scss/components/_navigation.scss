@@ -1,0 +1,222 @@
+@use "../abstracts" as *;
+
+header {
+  @include m-auto;
+}
+
+.nav {
+  border-bottom: 1px solid $blue;
+  @include dflexcomp;
+  padding: 1.5rem 0;
+
+  &-list {
+    @include dflexhalf;
+
+    @include mq(land-phone) {
+      display: none;
+    }
+  }
+
+  li {
+    list-style: none;
+    font-size: 1.3rem;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: $dark-blue;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $pry-orange;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__left {
+    @include dflexcomp;
+    flex-basis: 50%;
+
+    @include mq(tab-port) {
+      min-width: 52rem;
+    }
+
+    @include mq(land-phone) {
+      min-width: 22rem;
+    }
+
+    &--hamMenu {
+      display: none;
+      width: 10%;
+      height: 2.05rem;
+
+      @include mq(land-phone) {
+        display: flex;
+      }
+    }
+
+    @include mq(land-phone) {
+      flex-basis: 21%;
+    }
+  }
+
+  &__right {
+    @include dflexcomp;
+    width: 8%;
+    // position: relative;
+
+    @include mq(tab-port) {
+      min-width: 7rem;
+    }
+
+    .cart-div {
+      position: relative;
+
+      .img-cart {
+        display: block;
+        cursor: pointer;
+        // border: 1px solid red;
+      }
+
+      .cart-amount {
+        display: none;
+        background: $pry-orange;
+        color: $white;
+        border-radius: 50%;
+        height: 1.2rem;
+        width: 1.2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 0.15rem;
+        position: absolute;
+        right: -0.4rem;
+        top: -0.4rem;
+      }
+    }
+
+    .cart__dropdown {
+      background-color: $white;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: absolute;
+      z-index: 3;
+      top: 5rem;
+      right: 4rem;
+      width: 28%;
+      padding: 0rem 1.5rem 1rem 1.5rem;
+
+      @include mq(640px) {
+        width: 90%;
+        top: 9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 45%;
+        padding: 0rem 1.9rem 1rem 1.9rem;
+      }
+
+      @include mq(475px) {
+        height: 38%;
+      }
+
+      .cart-heading {
+        padding: 0.8rem;
+
+        @include mq(640px) {
+          font-size: 3rem;
+        }
+      }
+
+      &--contents {
+        border-top: 1px solid $blue;
+        min-height: 23vh;
+        position: relative;
+
+        @include mq(640px) {
+          height: 90%;
+        }
+
+        h3 {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          top: 44%;
+          font-size: 1.2rem;
+          color: $blue;
+
+          @include mq(land-phone){
+            font-size: 1rem;
+          }
+          @include mq(640px) {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 38%;
+            font-size: 3rem;
+            width: 70%;
+          }
+
+          @include mq(475px) {
+            font-size: 2rem;
+          }
+        }
+
+        .cart__content--flex {
+          position: absolute;
+          top: 10%;
+          @include dflexcomp;
+          gap: 0.5rem;
+
+          @include mq(640px) {
+            width: 100%;
+            top: 7%;
+          }
+
+          .img-thumb {
+            width: 20%;
+            border-radius: 0.5rem;
+          }
+
+          .img-delete {
+            cursor: pointer;
+            flex-basis: 9%;
+          }
+
+          .content-texts {
+            p {
+              color: $dark-blue;
+              font-weight: 600;
+              font-size: 1.2rem;
+
+              @include mq(640px) {
+                font-size: 2.3rem;
+              }
+
+              @include mq(475px) {
+                font-size: 1.9rem;
+              }
+            }
+
+            span {
+              color: $black;
+              font-weight: 800;
+            }
+          }
+        }
+      }
+    }
+
+    .img-avatar {
+      width: 40%;
+      cursor: pointer;
+      border-radius: 50%;
+
+      &:hover {
+        border: 2px solid $pry-orange;
+      }
+    }
+  }
+}

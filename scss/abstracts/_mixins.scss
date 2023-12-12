@@ -1,0 +1,48 @@
+@use "sass:map";
+
+// MEDIA QUERY BREAKPOINTS!
+$breakpoints: (
+  475px: 29.679em,
+  phone: 35.999em,
+  // 575px
+  640px: 39.999em,
+  land-phone: 47.999em,
+  // 768px
+  tab-port: 61.999em,
+  // 992px
+  tab-land: 74.999em,
+  // 1200px
+  big-desktop: 87.499em,
+  // 1400px
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin m-auto {
+  width: 85%;
+  margin: auto;
+}
+
+@mixin dflexcomp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin dflexhalf {
+  display: flex;
+  align-items: center;
+}
+
+@mixin center-vertical-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

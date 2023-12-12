@@ -1,0 +1,102 @@
+@use "../abstracts" as *;
+
+.popup {
+  background-color: $black-o;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3000;
+  transition: all 0.5s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+
+  &__content {
+    @include center-vertical-horizontal;
+    padding: 0.6rem;
+    width: 34%;
+
+    .popup__img {
+      width: 100%;
+      position: relative;
+
+      .svg-close {
+        width: 5.5%;
+        height: 2.5rem;
+        padding-left: .5rem;
+        position: absolute;
+        right: 0;
+        top: -2.5rem;
+        fill: $white;
+        transition: all 0.2s;
+
+        @include mq(tab-port){
+          width: 7.5%;
+        }
+
+        @include mq(land-phone){
+          width: 8.5%;
+        }
+
+        @include mq(640px){
+          width: 10%;
+        }
+        &:hover {
+          fill: $pry-orange;
+        }
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 0.7rem;
+      }
+
+      .prevs-div {
+        @include arrow-divs;
+        left: -1.4rem;
+
+        .arrow-left {
+          @include arrow-icons;
+          top: 57%;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 44%;
+
+          &:hover {
+            stroke: $pry-orange;
+          }
+        }
+      }
+
+      .next-div {
+        @include arrow-divs;
+        right: -1.4rem;
+
+        .arrow-right {
+          @include arrow-icons;
+          top: 57%;
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+
+          &:hover {
+            stroke: $pry-orange;
+          }
+        }
+      }
+    }
+
+    .popup__img-gallery {
+      width: 90%;
+      margin: 2rem auto 0 auto;
+      @include dflexcomp;
+
+      img {
+        width: 20%;
+        border-radius: 0.7rem;
+      }
+    }
+  }
+}

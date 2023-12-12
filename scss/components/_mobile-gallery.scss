@@ -1,0 +1,55 @@
+@use "../abstracts/" as *;
+
+.mobile__gallery {
+  position: relative;
+  background-image: url(/images/image-product-1.jpg);
+  z-index: -100;
+  height: 53rem;
+  width: 100%;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &--prevs-div {
+    display: none;
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 4.5rem;;
+
+    @include mq(640px){
+      display: block;
+    }
+
+    .arrow-left {
+      @include arrow-icons2;
+      left: 1.2rem;
+    }
+  }
+
+  &--next-div {
+    display: none;
+    background-color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4.5rem;
+
+    @include mq(640px){
+     display: block;
+    }
+
+    .arrow-right {
+      @include arrow-icons2;
+      left: 1.5rem;
+    }
+  }
+}

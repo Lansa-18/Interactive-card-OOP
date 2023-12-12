@@ -1,0 +1,79 @@
+@use "../abstracts/" as *;
+
+.amount__container--button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.amount__submit {
+  background: $pry-orange;
+  color: $white;
+  flex-basis: 55%;
+  padding: 0.7rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.5s;
+
+  @include mq(640px) {
+    width: 100%;
+    padding: 1.7rem 0;
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .submit-btn {
+    @include mq(land-phone) {
+      img {
+        width: 22%;
+      }
+
+      h4 {
+        font-size: 0.9rem;
+      }
+    }
+
+    @include mq(640px) {
+      img {
+        width: 6%;
+      }
+
+      h4{
+        font-size: 1.3rem;
+      }
+    }
+
+    @include dflexhalf;
+    justify-content: center;
+    gap: 1rem;
+    width: 70%;
+    margin: auto;
+  }
+}
+
+.cart__content--button {
+  background-color: $pry-orange;
+  color: $white;
+  border: none;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  margin-top: 1rem;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 1.5rem 0;
+  border-radius: 1rem;
+  font-weight: 600;
+
+  @include mq(640px) {
+    padding: 2.5rem 0;
+    top: 59%;
+  }
+
+  @include mq(475px) {
+    top: 53%;
+  }
+}

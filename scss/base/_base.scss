@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  @include mq(big-desktop) {
+    // width <= 1400
+    font-size: 75%; // 1rem = 12px; 12/16 = 75%
+  }
+
+  @include mq(tab-land) {
+    // width <= 1200
+    font-size: 56.25%; // 1rem = 9px; 9/16 = 56.25
+  }
+
+  @include mq(tab-port) {
+    // width <= 992
+    font-size: 50%; // 1rem = 8px; 8/16 = 50%
+  }
+}
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+}

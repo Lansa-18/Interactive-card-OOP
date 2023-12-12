@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+@keyframes overlay-anim{
+    0%{
+        transform: translateX(-4rem);
+    }
+    100%{
+        transform: translateX(0rem);
+    }
+}

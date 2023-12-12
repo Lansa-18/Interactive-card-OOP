@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+.attribution{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 3.5rem;
+    color: $dark-blue;
+    a{
+        color: $pry-orange;
+        text-decoration: underline;
+    }
+}
