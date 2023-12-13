@@ -83,10 +83,11 @@ header {
 }
 
 .cardholder__content label {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: hsl(278, 68%, 11%);
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */
