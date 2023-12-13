@@ -104,7 +104,14 @@ header {
   margin-bottom: 1rem;
 }
 .cardholder__container form input {
-  padding: 0.5rem 1rem;
+  padding: 0.9rem 1rem;
+  outline: none;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 0.4rem;
+}
+.cardholder__container form input::placeholder {
+  color: hsl(279, 6%, 55%);
+  font-size: 1.1rem;
 }
 
 .cardholder__expiry--flex {

@@ -23,7 +23,15 @@
     }
 
     input{
-        padding: .5rem 1rem;
+        padding: .9rem 1rem;
+        outline: none;
+        border: 1px solid $light-g-violet;
+        border-radius: .4rem;
+
+        &::placeholder{
+            color: $dark-g-violet;
+            font-size: 1.1rem;
+        }
     }
   }
 }
