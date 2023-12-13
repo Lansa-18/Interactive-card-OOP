@@ -68,12 +68,12 @@ header {
   height: 100vh;
 }
 .body__flex .gradient__left {
-  flex-basis: 40%;
+  flex-basis: 30%;
   border: 1px solid red;
-  background: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+  background: linear-gradient(to bottom right, hsl(278, 68%, 11%) 10%, hsl(278, 94%, 30%), hsl(0, 100%, 66%));
 }
 .body__flex .white__right {
-  flex-basis: 60%;
+  flex-basis: 70%;
   background-color: white;
   border: 1px solid black;
 }
