@@ -69,9 +69,13 @@ header {
 }
 .body__flex .gradient__left {
   flex-basis: 40%;
+  border: 1px solid red;
+  background: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
 }
 .body__flex .white__right {
   flex-basis: 60%;
+  background-color: white;
+  border: 1px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */
