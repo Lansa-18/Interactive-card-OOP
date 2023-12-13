@@ -108,6 +108,11 @@ header {
   outline: none;
   border: 1px solid hsl(270, 3%, 87%);
   border-radius: 0.4rem;
+  position: relative;
+  z-index: 1;
+}
+.cardholder__container form input:focus {
+  border: 1px solid hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
 }
 .cardholder__container form input::placeholder {
   color: hsl(279, 6%, 55%);

@@ -22,16 +22,22 @@
       }
     }
 
-    input{
-        padding: .9rem 1rem;
-        outline: none;
-        border: 1px solid $light-g-violet;
-        border-radius: .4rem;
+    input {
+      padding: 0.9rem 1rem;
+      outline: none;
+      border: 1px solid $light-g-violet;
+      border-radius: 0.4rem;
+      position: relative;
+      z-index: 1;
 
-        &::placeholder{
-            color: $dark-g-violet;
-            font-size: 1.1rem;
-        }
+      &:focus {
+        border: 1px solid $linear-gradient;
+      }
+
+      &::placeholder {
+        color: $dark-g-violet;
+        font-size: 1.1rem;
+      }
     }
   }
 }
