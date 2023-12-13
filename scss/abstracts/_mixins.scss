@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 // MEDIA QUERY BREAKPOINTS!
 $breakpoints: (
@@ -45,4 +45,9 @@ $breakpoints: (
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin flex-vertical{
+  display: flex;
+  flex-direction: column;
 }

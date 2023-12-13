@@ -1,49 +1,43 @@
 @use '../abstracts/' as *;
 
-.cardholder__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.cardholder__container {
+  @include center-vertical-horizontal;
 
   label {
     font-size: 0.8rem;
     font-weight: 700;
     color: $very-dark-g-violet;
-    margin-bottom: 1rem;
     text-transform: uppercase;
   }
 
-  form{
-    border: 1px solid black;
+  form {
+    // border: 1px solid black;
 
-    .cardholder__content--name{
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .cardholder__content--number{
-        display: flex;
-        flex-direction: column;
+    .cardholder__content {
+      @include flex-vertical;
+      gap: 0.7rem;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
     }
 
-    .cardholder__content--date{
-        display: flex;
-        flex-direction: column;
+    input{
+        padding: .5rem 1rem;
     }
   }
 }
 
-.cardholder__expiry--flex{
-    border: 1px solid black;
+.cardholder__expiry--flex {
+  border: 1px solid black;
 
-    .card__date--flex{
-        border: 1px solid red;
-        display: flex;
+  .card__date--flex {
+    border: 1px solid red;
+    display: flex;
 
-        .card__date{
-            display: flex;
-            flex-direction: column;
-        }
+    .card__date {
+      display: flex;
+      flex-direction: column;
     }
+  }
 }

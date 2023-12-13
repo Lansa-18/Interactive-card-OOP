@@ -83,33 +83,28 @@ header {
   position: relative;
 }
 
-.cardholder__content {
+.cardholder__container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.cardholder__content label {
+.cardholder__container label {
   font-size: 0.8rem;
   font-weight: 700;
   color: hsl(278, 68%, 11%);
-  margin-bottom: 1rem;
   text-transform: uppercase;
 }
-.cardholder__content form {
-  border: 1px solid black;
-}
-.cardholder__content form .cardholder__content--name {
+.cardholder__container form .cardholder__content {
   display: flex;
   flex-direction: column;
+  gap: 0.7rem;
 }
-.cardholder__content form .cardholder__content--number {
-  display: flex;
-  flex-direction: column;
+.cardholder__container form .cardholder__content:not(:last-child) {
+  margin-bottom: 1rem;
 }
-.cardholder__content form .cardholder__content--date {
-  display: flex;
-  flex-direction: column;
+.cardholder__container form input {
+  padding: 0.5rem 1rem;
 }
 
 .cardholder__expiry--flex {
