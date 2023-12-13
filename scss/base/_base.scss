@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use '../abstracts' as *;
 
 *,
 *::after,
@@ -28,6 +28,6 @@ html {
   }
 }
 
-// body{
-//   font-family: 'Kumbh Sans', sans-serif;
-// }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
