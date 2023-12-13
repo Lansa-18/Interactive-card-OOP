@@ -1,2 +1,11 @@
 @use '../abstracts/' as *;
 
+.cardholder__content{
+    // border: 1px solid black;
+    label{
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $very-dark-g-violet;
+        margin-bottom: 1rem;
+    }
+}

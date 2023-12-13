@@ -82,4 +82,11 @@ header {
   flex-basis: 70%;
 }
 
+.cardholder__content label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: hsl(278, 68%, 11%);
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=main.css.map */
