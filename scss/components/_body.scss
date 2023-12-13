@@ -1,6 +1,14 @@
 @use '../abstracts' as *;
 .body__flex{
-    background-color: red;
     display: flex;
     height: 100vh;
+
+    .gradient__left{
+        flex-basis: 40%;
+    }
+
+    .white__right{
+        flex-basis: 60%;
+
+    }
 }

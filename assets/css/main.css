@@ -64,9 +64,14 @@ header {
 }
 
 .body__flex {
-  background-color: red;
   display: flex;
   height: 100vh;
+}
+.body__flex .gradient__left {
+  flex-basis: 40%;
+}
+.body__flex .white__right {
+  flex-basis: 60%;
 }
 
 /*# sourceMappingURL=main.css.map */
