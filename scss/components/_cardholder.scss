@@ -31,7 +31,12 @@
       z-index: 1;
 
       &:focus {
-        border: 1px solid $linear-gradient;
+        border: double 1.5px transparent;
+        border-radius: 4px;
+        background-image: linear-gradient(white, white),
+          linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
       }
 
       &::placeholder {

@@ -112,7 +112,11 @@ header {
   z-index: 1;
 }
 .cardholder__container form input:focus {
-  border: 1px solid hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  border: double 1.5px transparent;
+  border-radius: 4px;
+  background-image: linear-gradient(white, white), linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
 .cardholder__container form input::placeholder {
   color: hsl(279, 6%, 55%);
