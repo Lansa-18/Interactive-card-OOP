@@ -1,7 +1,11 @@
 @use '../abstracts/' as *;
 
 .cardholder__content {
-  // border: 1px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
   label {
     font-size: 0.8rem;
     font-weight: 700;
@@ -10,5 +14,36 @@
     text-transform: uppercase;
   }
 
-//   .
+  form{
+    border: 1px solid black;
+
+    .cardholder__content--name{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .cardholder__content--number{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cardholder__content--date{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+}
+
+.cardholder__expiry--flex{
+    border: 1px solid black;
+
+    .card__date--flex{
+        border: 1px solid red;
+        display: flex;
+
+        .card__date{
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

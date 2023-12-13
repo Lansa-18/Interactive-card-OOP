@@ -80,14 +80,48 @@ header {
 }
 .body__flex .white__right {
   flex-basis: 70%;
+  position: relative;
 }
 
+.cardholder__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .cardholder__content label {
   font-size: 0.8rem;
   font-weight: 700;
   color: hsl(278, 68%, 11%);
   margin-bottom: 1rem;
   text-transform: uppercase;
+}
+.cardholder__content form {
+  border: 1px solid black;
+}
+.cardholder__content form .cardholder__content--name {
+  display: flex;
+  flex-direction: column;
+}
+.cardholder__content form .cardholder__content--number {
+  display: flex;
+  flex-direction: column;
+}
+.cardholder__content form .cardholder__content--date {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardholder__expiry--flex {
+  border: 1px solid black;
+}
+.cardholder__expiry--flex .card__date--flex {
+  border: 1px solid red;
+  display: flex;
+}
+.cardholder__expiry--flex .card__date--flex .card__date {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=main.css.map */

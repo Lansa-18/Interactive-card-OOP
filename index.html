@@ -23,7 +23,7 @@
       <div class="white__right">
         <section class="cardholder__content">
           <form action="">
-            <div class="cardholder__content--name">
+            <section class="cardholder__content--name">
               <label for="card-name">Cardholder Name</label>
               <input
                 type="text"
@@ -31,10 +31,10 @@
                 required
                 placeholder="e.g. Jane Appleseed"
               />
-              <span class="hidden">Wrong Format, text only</span>
-            </div>
+              <span class="">Wrong Format, text only</span>
+            </section>
 
-            <div class="cardholder__content--number">
+            <section class="cardholder__content--number">
               <label for="card-number">Card Number</label>
               <input
                 type="text"
@@ -42,30 +42,32 @@
                 required
                 placeholder="e.g. 1234 5678 9123 0000"
               />
-              <span class="hidden">Wrong Format, numbers only</span>
-            </div>
+              <span class="">Wrong Format, numbers only</span>
+            </section>
 
-            <div class="cardholder__expiry--flex">
+            <section class="cardholder__expiry--flex">
               <div class="cardholder__content--date">
                 <label for="card-date">Exp. Date (MM/YY)</label>
-                <div class="card__date1">
-                  <input
-                    type="number"
-                    id="card-date"
-                    required
-                    placeholder="MM"
-                  />
-                  <span class="">Wrong Format, numbers only</span>
-                </div>
-                <div class="card__date2">
-                  <input
-                    type="number"
-                    id="card-date"
-                    required
-                    placeholder="YY"
-                  />
-                  <span class="">Wrong Format, numbers only</span>
-                </div>
+                <section class="card__date--flex">
+                  <div class="card__date card__date1">
+                    <input
+                      type="number"
+                      id="card-date"
+                      required
+                      placeholder="MM"
+                    />
+                    <span class="">Wrong Format, numbers only</span>
+                  </div>
+                  <div class="card__date card__date2">
+                    <input
+                      type="number"
+                      id="card-date"
+                      required
+                      placeholder="YY"
+                    />
+                    <span class="">Wrong Format, numbers only</span>
+                  </div>
+                </section>
               </div>
 
               <div class="cardholder__content--cvc">
@@ -77,7 +79,7 @@
                   placeholder="e.g. 123"
                 />
               </div>
-            </div>
+            </section>
 
           </form>
 
