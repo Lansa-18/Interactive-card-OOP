@@ -1,0 +1,6 @@
+@use '../abstracts' as *;
+.body__flex{
+    background-color: red;
+    display: flex;
+    height: 100vh;
+}
