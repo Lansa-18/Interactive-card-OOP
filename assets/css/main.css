@@ -207,5 +207,16 @@ header {
   height: 1rem;
   border-radius: 50%;
 }
+.atm__card--front-content-middle {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+}
+.atm__card--front-content-middle p {
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  flex-basis: 25%;
+}
 
 /*# sourceMappingURL=main.css.map */
