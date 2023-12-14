@@ -58,6 +58,16 @@ header {
   margin: auto;
 }
 
+.cardholder__content--button {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+
 .attribution {
   width: 70%;
   margin: auto;

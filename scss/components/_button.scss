@@ -1,1 +1,11 @@
 @use "../abstracts/" as *;
+
+.cardholder__content--button{
+    background-color: $very-dark-g-violet;
+    color: $white;
+    border: none;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    border-radius: .5rem;
+}
