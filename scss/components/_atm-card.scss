@@ -1,1 +1,17 @@
 @use '../abstracts/' as *;
+
+.atm__card{
+    position: absolute;
+}
+
+.atm__card--front{
+    // width: 90%;
+    top: 9rem;
+    left: 9rem;
+    // border: 1px solid red;
+
+    & img{
+        border: 1px solid blue;
+        width: 85%;
+    }
+}

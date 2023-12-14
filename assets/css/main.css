@@ -170,4 +170,17 @@ header {
   gap: 0.7rem;
 }
 
+.atm__card {
+  position: absolute;
+}
+
+.atm__card--front {
+  top: 9rem;
+  left: 9rem;
+}
+.atm__card--front img {
+  border: 1px solid blue;
+  width: 85%;
+}
+
 /*# sourceMappingURL=main.css.map */
