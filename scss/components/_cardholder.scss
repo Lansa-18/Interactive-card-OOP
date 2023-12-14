@@ -10,9 +10,9 @@
     text-transform: uppercase;
   }
 
-  span{
+  span {
     color: $error-red;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   form {
@@ -53,20 +53,16 @@
 }
 
 .cardholder__expiry--flex {
-//   border: 1px solid black;
   display: flex;
   align-items: center;
-//   flex-direction: row;
-  gap: .8rem;
+  gap: 0.8rem;
 
-  .cardholder__content--date{
-    border: 1px solid blue;
+  .cardholder__content--date {
     width: 40%;
   }
 
   .card__date--flex {
-    margin-top: .7rem;
-    // border: 1px solid red;
+    margin-top: 0.7rem;
     display: flex;
     gap: 1rem;
     width: 100%;
@@ -74,33 +70,18 @@
     .card__date {
       display: flex;
       flex-direction: column;
-      gap: .7rem;
+      gap: 0.7rem;
       width: 40%;
-    }
-
-    input{
-        // border: 1px solid red;
     }
   }
 }
 
-.cardholder__content--cvc{
-    flex-basis: 60%;
-    // @include flex-vertical;
-    // justify-content: center;
-    // align-items: center;
-    // gap: .6rem;
-    border: 1px solid blue;
+.cardholder__content--cvc {
+  flex-basis: 60%;
 
-    &-section{
-        @include flex-vertical;
-        margin-top: 0.7rem;
-        gap: .7rem;
-    }
-
-    input{
-        border: 1px solid red;
-        // background: red;
-        margin: 0 0 0 0;
-    }
+  &-section {
+    @include flex-vertical;
+    margin-top: 0.7rem;
+    gap: 0.7rem;
+  }
 }
