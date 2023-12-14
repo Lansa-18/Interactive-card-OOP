@@ -1,47 +1,42 @@
 @use '../abstracts/' as *;
 
-.atm__card{
-    position: absolute;
+.atm__card {
+  position: absolute;
 }
 
-.atm__card--front{
-    background: url(/images/bg-card-front.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 33rem;
-    height: 33rem;
-    top: 8rem;
-    left: 8rem;
+.atm__card--front {
+  background: url(/images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 33rem;
+  height: 33rem;
+  top: 8rem;
+  left: 8rem;
 
-    &-content{
-        border: 1px solid red;
-        width: 90%;
-        margin: auto;
-        padding: 1rem 0; 
-        // height: 100%;
+  &-content {
+    border: 1px solid red;
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+    // height: 100%;
 
-        &-top{
-            display: flex;
-            align-items: center;
-            // border: 1px solid black;
-            justify-content: space-between;
-            width: 15%;
+    &-top {
+      @include dflexcomp;
+      width: 15%;
 
-            .big-circle{
-                border: 1px solid red;
-                background-color: $white;
-                width: 2.5rem;
-                height: 2.5rem;
-                border-radius: 50%;
-            }
+      .big-circle {
+        background-color: $white;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
 
-            .small-circle{
-                border: 1px solid $white;
-                width: 1rem;
-                height: 1rem;
-                border-radius: 50%;
-            }
-        }
+      .small-circle {
+        border: 1px solid $white;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+      }
     }
-
+  }
 }

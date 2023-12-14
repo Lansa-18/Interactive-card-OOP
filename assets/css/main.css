@@ -196,7 +196,6 @@ header {
   width: 15%;
 }
 .atm__card--front-content-top .big-circle {
-  border: 1px solid red;
   background-color: hsl(0, 0%, 100%);
   width: 2.5rem;
   height: 2.5rem;
