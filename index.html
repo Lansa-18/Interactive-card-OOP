@@ -45,7 +45,7 @@
               <span class="">Wrong Format, numbers only</span>
             </section>
 
-            <section class="cardholder__content cardholder__expiry--flex">
+            <section class="cardholder__expiry--flex">
               <div class="cardholder__content--date">
                 <label for="card-date">Exp. Date (MM/YY)</label>
                 <section class="card__date--flex">
@@ -56,7 +56,7 @@
                       required
                       placeholder="MM"
                     />
-                    <span class="">Wrong Format, numbers only</span>
+                    <span class="">Can't be blank</span>
                   </div>
                   <div class="card__date card__date2">
                     <input
@@ -65,19 +65,22 @@
                       required
                       placeholder="YY"
                     />
-                    <span class="">Wrong Format, numbers only</span>
+                    <span class="">Can't be blank</span>
                   </div>
                 </section>
               </div>
 
               <div class="cardholder__content--cvc">
                 <label for="card-cvc">CVC</label>
-                <input
+                <section class="cardholder__content--cvc-section">
+                  <input
                   type="number"
                   id="card-cvc"
                   required
                   placeholder="e.g. 123"
                 />
+                <span class="">Can't be blank</span>
+                </section>
               </div>
             </section>
 
