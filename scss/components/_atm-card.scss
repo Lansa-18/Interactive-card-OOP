@@ -5,13 +5,14 @@
 }
 
 .atm__card--front{
+    background: url(/images/bg-card-front.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 33rem;
+    height: 33rem;
     // width: 90%;
-    top: 9rem;
-    left: 9rem;
+    top: 8rem;
+    left: 8rem;
     // border: 1px solid red;
 
-    & img{
-        border: 1px solid blue;
-        width: 85%;
-    }
 }

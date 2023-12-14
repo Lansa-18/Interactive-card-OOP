@@ -175,12 +175,13 @@ header {
 }
 
 .atm__card--front {
-  top: 9rem;
-  left: 9rem;
-}
-.atm__card--front img {
-  border: 1px solid blue;
-  width: 85%;
+  background: url(/images/bg-card-front.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 33rem;
+  height: 33rem;
+  top: 8rem;
+  left: 8rem;
 }
 
 /*# sourceMappingURL=main.css.map */
