@@ -218,5 +218,15 @@ header {
   letter-spacing: 1px;
   flex-basis: 25%;
 }
+.atm__card--front-content-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  border: 1px solid red;
+}
+.atm__card--front-content-bottom p {
+  text-transform: uppercase;
+}
 
 /*# sourceMappingURL=main.css.map */

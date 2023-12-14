@@ -53,5 +53,17 @@
             flex-basis: 25%;
         }
     }
+
+    &-bottom{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $white;
+        border: 1px solid red;
+
+        & p{
+            text-transform: uppercase;
+        }
+    }
   }
 }
