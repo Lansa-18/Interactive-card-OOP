@@ -14,10 +14,11 @@
   left: 8rem;
 
   &-content {
-    border: 1px solid red;
+    @include flex-vertical;
+    // border: 1px solid red;
     width: 90%;
     margin: auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
     // height: 100%;
 
     &-top {
@@ -39,31 +40,30 @@
       }
     }
 
-    &-middle{
-        margin-top: 3rem;
-        @include dflexhalf;
-        // gap: 1.2rem;
-        color: $white;
-        // border: 1px solid red;
+    &-middle {
+      margin-top: 4.5rem;
+      @include dflexhalf;
+      // gap: 1.2rem;
+      color: $white;
+      // border: 1px solid red;
 
-        & p{
-            font-size: 2.8rem;
-            letter-spacing: 1px;
-            // border: 1px solid red;
-            flex-basis: 25%;
-        }
+      & p {
+        font-size: 2.8rem;
+        letter-spacing: 1px;
+        // border: 1px solid red;
+        flex-basis: 25%;
+      }
     }
 
-    &-bottom{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: $white;
-        border: 1px solid red;
+    &-bottom {
+      @include dflexcomp;
+      margin-top: 2.5rem;
+      color: $white;
+      // border: 1px solid blue;
 
-        & p{
-            text-transform: uppercase;
-        }
+      & p {
+        text-transform: uppercase;
+      }
     }
   }
 }

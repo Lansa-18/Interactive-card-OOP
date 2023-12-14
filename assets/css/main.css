@@ -184,10 +184,11 @@ header {
   left: 8rem;
 }
 .atm__card--front-content {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
   width: 90%;
   margin: auto;
-  padding: 1rem 0;
+  padding: 2rem 0;
 }
 .atm__card--front-content-top {
   display: flex;
@@ -208,7 +209,7 @@ header {
   border-radius: 50%;
 }
 .atm__card--front-content-middle {
-  margin-top: 3rem;
+  margin-top: 4.5rem;
   display: flex;
   align-items: center;
   color: hsl(0, 0%, 100%);
@@ -220,10 +221,10 @@ header {
 }
 .atm__card--front-content-bottom {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5rem;
   color: hsl(0, 0%, 100%);
-  border: 1px solid red;
 }
 .atm__card--front-content-bottom p {
   text-transform: uppercase;
