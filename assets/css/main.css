@@ -88,6 +88,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 45%;
 }
 .cardholder__container label {
   font-size: 0.8rem;
@@ -98,6 +99,9 @@ header {
 .cardholder__container span {
   color: hsl(0, 100%, 66%);
   font-size: 0.8rem;
+}
+.cardholder__container form {
+  border: 1px solid black;
 }
 .cardholder__container form .cardholder__content {
   display: flex;
