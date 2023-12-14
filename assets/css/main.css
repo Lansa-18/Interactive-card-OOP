@@ -63,7 +63,7 @@ header {
   color: hsl(0, 0%, 100%);
   border: none;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 1rem 0;
   border-radius: 0.5rem;
 }
@@ -109,9 +109,6 @@ header {
 .cardholder__container span {
   color: hsl(0, 100%, 66%);
   font-size: 0.8rem;
-}
-.cardholder__container form {
-  border: 1px solid black;
 }
 .cardholder__container form .cardholder__content {
   display: flex;
