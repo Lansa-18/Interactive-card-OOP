@@ -133,6 +133,7 @@ header {
   gap: 0.8rem;
 }
 .cardholder__expiry--flex .cardholder__content--date {
+  border: 1px solid blue;
   width: 40%;
 }
 .cardholder__expiry--flex .card__date--flex {
