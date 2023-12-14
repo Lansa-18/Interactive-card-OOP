@@ -10,9 +10,17 @@
     background-size: contain;
     width: 33rem;
     height: 33rem;
-    // width: 90%;
     top: 8rem;
     left: 8rem;
-    // border: 1px solid red;
+
+    &-content{
+        border: 1px solid red;
+        width: 90%;
+        // height: 100%;
+
+        &-top{
+            display: flex;
+        }
+    }
 
 }
