@@ -217,6 +217,7 @@ header {
 .atm__card--front-content-middle p {
   font-size: 2.8rem;
   letter-spacing: 1px;
+  border: 1px solid red;
   flex-basis: 25%;
 }
 .atm__card--front-content-bottom {
