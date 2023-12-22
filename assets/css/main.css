@@ -234,8 +234,15 @@ header {
   width: 31.5rem;
   height: 31.5rem;
   position: absolute;
-  top: 30rem;
-  left: 10rem;
+  top: 27rem;
+  left: 14rem;
+}
+.atm__card--back .atm__card--cvc {
+  color: hsl(270, 3%, 87%);
+  font-size: 1.4rem;
+  position: absolute;
+  top: 7.59rem;
+  left: 25rem;
 }
 
 /*# sourceMappingURL=main.css.map */
