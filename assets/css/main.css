@@ -170,16 +170,13 @@ header {
   gap: 0.7rem;
 }
 
-.atm__card {
-  position: absolute;
-}
-
 .atm__card--front {
   background: url(/images/bg-card-front.png);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 33rem;
-  height: 33rem;
+  width: 31.5rem;
+  height: 31.5rem;
+  position: absolute;
   top: 8rem;
   left: 8rem;
 }
@@ -228,6 +225,17 @@ header {
 }
 .atm__card--front-content-bottom p {
   text-transform: uppercase;
+}
+
+.atm__card--back {
+  background: url(/images/bg-card-back.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 31.5rem;
+  height: 31.5rem;
+  position: absolute;
+  top: 30rem;
+  left: 10rem;
 }
 
 /*# sourceMappingURL=main.css.map */

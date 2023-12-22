@@ -53,3 +53,10 @@ $breakpoints: (
   display: flex;
   flex-direction: column;
 }
+
+@mixin bg-format{
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 31.5rem;
+  height: 31.5rem;
+}
