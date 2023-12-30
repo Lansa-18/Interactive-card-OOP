@@ -32,6 +32,14 @@ class Card {
     }
   }
 
+  _validateName(){
+
+  }
+
+  _validateNumber(){
+
+  }
+
   _validateExpDate(){
 
   }
