@@ -8,6 +8,8 @@ const inputCardYear = document.querySelector('.card-year');
 const inputCardCvc = document.querySelector('#card-cvc');
 const confirmBtn = document.querySelector('.cardholder__content--button');
 const atmForm = document.querySelector('.card-form');
+const visualCardName = document.querySelector('.visual-card-name');
+const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 
 // Creating the Card class
 
@@ -15,19 +17,21 @@ class Card {
   #cvc;
 
   constructor(fullname, number, month, year, cvc) {
-    [this.name, this.surname] = fullname.split(' ');
+    [this.surname, this.name] = fullname.split(' ');
     this.number = number;
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
   }
 
+  // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
       alert('Please enter your full name');
     }
   }
 
+  // The form method
   _form(e) {
     e.preventDefault();
     this._validateForm();
@@ -41,8 +45,14 @@ class Card {
       this.#cvc
     );
   }
+
+  _updateCard(){
+    visualCardName.textContent = `${this.surname} ${this.name}`
+  }
+
 }
 
+// The form event listener
 atmForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -55,4 +65,5 @@ atmForm.addEventListener('submit', function (e) {
   );
 
   userCard._form(e);
+  userCard._updateCard();
 });
