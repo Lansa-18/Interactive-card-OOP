@@ -33,7 +33,9 @@ class Card {
   }
 
   _validateName(){
-
+    if(inputCardholder.value !== ''){
+      this._allErrorMessage(0)
+    }
   }
 
   _validateNumber(){
