@@ -37,14 +37,20 @@ class Card {
     console.log(this.name, this.surname, this.number, this.month, this.year, this.#cvc);
 
   }
+
+
 }
 
-const userCard = new Card(
-  inputCardholder.value,
-  inputCardNumber.value,
-  inputCardMonth.value,
-  inputCardYear.value,
-  inputCardCvc.value
-);
+atmForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  
+  const userCard = new Card(
+    inputCardholder.value,
+    inputCardNumber.value,
+    inputCardMonth.value,
+    inputCardYear.value,
+    inputCardCvc.value
+  );
 
-atmForm.addEventListener('submit', this._form.bind(userCard));
+  userCard._form();
+});
