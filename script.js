@@ -43,7 +43,7 @@ class Card {
 
 atmForm.addEventListener('submit', function(e){
   e.preventDefault();
-  
+
   const userCard = new Card(
     inputCardholder.value,
     inputCardNumber.value,
@@ -52,5 +52,5 @@ atmForm.addEventListener('submit', function(e){
     inputCardCvc.value
   );
 
-  userCard._form();
+  userCard._form(e);
 });
