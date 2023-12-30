@@ -31,6 +31,10 @@ class Card {
     }
   }
 
+  _validateExpDate(){
+    
+  }
+
   // The form method
   _form(e) {
     e.preventDefault();
@@ -48,6 +52,8 @@ class Card {
 
   _updateCard(){
     visualCardName.textContent = `${this.surname} ${this.name}`
+
+
   }
 
 }
