@@ -14,14 +14,12 @@ const atmForm = document.querySelector('.card-form');
 class Card {
   #cvc;
 
-  
   constructor(fullname, number, month, year, cvc) {
     [this.name, this.surname] = fullname.split(' ');
     this.number = number;
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
-
   }
 
   _validateForm() {
@@ -29,19 +27,23 @@ class Card {
       alert('Please enter your full name');
     }
   }
-  
+
   _form(e) {
     e.preventDefault();
     this._validateForm();
     console.log('This form has been submitted');
-    console.log(this.name, this.surname, this.number, this.month, this.year, this.#cvc);
-
+    console.log(
+      this.name,
+      this.surname,
+      this.number,
+      this.month,
+      this.year,
+      this.#cvc
+    );
   }
-
-
 }
 
-atmForm.addEventListener('submit', function(e){
+atmForm.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const userCard = new Card(
