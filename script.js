@@ -33,13 +33,15 @@ class Card {
   }
 
   _validateName(){
-    if(inputCardholder.value !== ''){
+    if(this.name !== '' || this.surname !== ''){
       this._allErrorMessage(0)
     }
   }
 
   _validateNumber(){
-
+    if(this.number === ''){
+      this._allErrorMessage(0)
+    }
   }
 
   _validateExpDate(){
@@ -50,6 +52,8 @@ class Card {
   _form(e) {
     e.preventDefault();
     this._validateForm();
+    this._validateName();
+    this._updateCard();
     console.log('This form has been submitted');
     console.log(
       this.name,
@@ -62,15 +66,13 @@ class Card {
   }
 
   _allErrorMessage(i){
-    allErrorSpan.forEach((err, i) => {
-      err[i].classlist.remove(hidden)
+    allErrorSpan.forEach((err, index, arr) => {
+      arr[i].classList.remove('hidden')
     })
   }
 
   _updateCard(){
     visualCardName.textContent = `${this.surname} ${this.name}`
-
-
   }
 
 }
@@ -88,5 +90,5 @@ atmForm.addEventListener('submit', function (e) {
   );
 
   userCard._form(e);
-  userCard._updateCard();
+  // userCard._updateCard();
 });
