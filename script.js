@@ -73,8 +73,7 @@ class Card {
 
   _updateCard(){
     visualCardName.textContent = `${this.surname} ${this.name}`;
-    
-
+    visualCardExpDate.textContent = `${this.#cvc}`
   }
 
 }
