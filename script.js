@@ -9,6 +9,7 @@ const inputCardCvc = document.querySelector('#card-cvc');
 const confirmBtn = document.querySelector('.cardholder__content--button');
 const atmForm = document.querySelector('.card-form');
 const visualCardName = document.querySelector('.visual-card-name');
+const visualCardNumber = document.querySelector('.visual-card-number');
 const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('error-hidden')
@@ -56,6 +57,7 @@ class Card {
     this._validateName();
     this._updateCard();
     this._splitYear();
+    this._fourDigitSpacing();
     // console.log('This form has been submitted');
     // console.log(
     //   this.name,
@@ -84,6 +86,21 @@ class Card {
     this._splitYear();
   }
 
+  _fourDigitSpacing(){
+    const numberArray = this.number.split('')
+    const numArray = numberArray.map((num, index) => {
+      if(index % 4 === 0){
+        return num + ' '
+      }else{
+        return num
+      }
+    })
+    const numString = numArray.join('')
+    visualCardNumber.textContent = numString
+  }
+  _maxTwentyNum(){
+
+  }
   
 
 }
