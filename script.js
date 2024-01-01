@@ -56,15 +56,15 @@ class Card {
     this._validateName();
     this._updateCard();
     this._splitYear();
-    console.log('This form has been submitted');
-    console.log(
-      this.name,
-      this.surname,
-      this.number,
-      this.month,
-      this.year,
-      this.#cvc
-    );
+    // console.log('This form has been submitted');
+    // console.log(
+    //   this.name,
+    //   this.surname,
+    //   this.number,
+    //   this.month,
+    //   this.year,
+    //   this.#cvc
+    // );
   }
 
   _allErrorMessage(i){
