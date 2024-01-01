@@ -72,7 +72,9 @@ class Card {
   }
 
   _updateCard(){
-    visualCardName.textContent = `${this.surname} ${this.name}`
+    visualCardName.textContent = `${this.surname} ${this.name}`;
+    
+
   }
 
 }
