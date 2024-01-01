@@ -9,7 +9,8 @@ const inputCardCvc = document.querySelector('#card-cvc');
 const confirmBtn = document.querySelector('.cardholder__content--button');
 const atmForm = document.querySelector('.card-form');
 const visualCardName = document.querySelector('.visual-card-name');
-const visualCardExpDate = document.querySelector('.atm__card--cvc');
+const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
+const visualCardCvc = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('error-hidden')
 
 // Creating the Card class
@@ -73,7 +74,7 @@ class Card {
 
   _updateCard(){
     visualCardName.textContent = `${this.surname} ${this.name}`;
-    visualCardExpDate.textContent = `${this.#cvc}`
+    visualCardCvc.textContent = `${this.#cvc}`
   }
 
 }
