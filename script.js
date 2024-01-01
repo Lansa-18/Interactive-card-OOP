@@ -9,7 +9,7 @@ const inputCardCvc = document.querySelector('#card-cvc');
 const confirmBtn = document.querySelector('.cardholder__content--button');
 const atmForm = document.querySelector('.card-form');
 const visualCardName = document.querySelector('.visual-card-name');
-const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
+const visualCardExpDate = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('error-hidden')
 
 // Creating the Card class
