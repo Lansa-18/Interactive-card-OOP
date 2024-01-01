@@ -55,6 +55,7 @@ class Card {
     this._validateForm();
     this._validateName();
     this._updateCard();
+    this._splitYear();
     console.log('This form has been submitted');
     console.log(
       this.name,
@@ -72,10 +73,18 @@ class Card {
     })
   }
 
+  _splitYear(){
+    const twoDigitYear = this.year.slice(2,4)
+    visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`
+  }
+
   _updateCard(){
     visualCardName.textContent = `${this.surname} ${this.name}`;
     visualCardCvc.textContent = `${this.#cvc}`
+    this._splitYear();
   }
+
+  
 
 }
 
