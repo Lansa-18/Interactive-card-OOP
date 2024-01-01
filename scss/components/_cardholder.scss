@@ -60,7 +60,7 @@
   gap: 0.8rem;
 
   .cardholder__content--date {
-    width: 40%;
+    width: 45%;
   }
 
   .card__date--flex {
@@ -73,13 +73,20 @@
       display: flex;
       flex-direction: column;
       gap: 0.7rem;
+    }
+
+    .card__date1{
       width: 40%;
+    }
+
+    .card__date2{
+      width: 45%;
     }
   }
 }
 
 .cardholder__content--cvc {
-  flex-basis: 60%;
+  flex-basis: 55%;
 
   &-section {
     @include flex-vertical;
