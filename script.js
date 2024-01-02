@@ -12,7 +12,7 @@ const visualCardName = document.querySelector('.visual-card-name');
 const visualCardNumber = document.querySelector('.visual-card-number');
 const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
-const allErrorSpan = document.querySelectorAll('error-hidden');
+const allErrorSpan = document.querySelectorAll('#error-hidden');
 
 // Creating the Card class
 
@@ -64,8 +64,8 @@ class Card {
   }
 
   _validateNumber() {
-    if (this.number === '') {
-      this._allErrorMessage(0);
+    if (this.number) {
+      this._allErrorMessage(1);
     }
   }
 
@@ -78,9 +78,9 @@ class Card {
     this._splitYear();
   }
 
-  _allErrorMessage() {
-    allErrorSpan.forEach((err, index, arr) => {
-      err.classList.remove('hidden');
+  _allErrorMessage(index) {
+    allErrorSpan.forEach((err, i, arr) => {
+      arr[index].classList.remove('hidden');
     });
   }
 
