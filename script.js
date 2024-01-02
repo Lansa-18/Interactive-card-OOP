@@ -81,9 +81,9 @@ class Card {
     const numsArr = inputValue.toString().split('');
     console.log(numsArr);
 
-    // If the number has more than 16 digits, ignore the extra digits
-    if (numsArr.length > 16) {
-      numsArr.length = 16;
+    // If the number has more than 19 characters (16 digits and 3 spaces), ignore the extra digits
+    if (numsArr.length > 19) {
+      numsArr.length = 19;
       console.log(numsArr);
     }
     // Create a new array for storing the digits and spaces
