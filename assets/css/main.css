@@ -212,8 +212,6 @@ header {
 }
 .atm__card--front-content-middle {
   margin-top: 4.5rem;
-  display: flex;
-  align-items: center;
   color: hsl(0, 0%, 100%);
 }
 .atm__card--front-content-middle p {

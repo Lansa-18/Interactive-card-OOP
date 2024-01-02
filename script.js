@@ -46,9 +46,9 @@ class Card {
     }
   }
 
-  _validateExpDate(){
+  // _validateExpDate(){
 
-  }
+  // }
 
   // The form method
   _form(e) {
