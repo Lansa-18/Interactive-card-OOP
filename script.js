@@ -89,13 +89,21 @@ class Card {
     // Create a new array for storing the digits and spaces
     const spacedArr = [];
 
+    // Counter for the digits
+    let digitCounter = 0;
+
     // Loop through the array of numbers
     numsArr.forEach((num, index) => {
+      // If the current character is a digit, increment the digit counter
+      if (num !== ' ') {
+        digitCounter++;
+      }
+
       // Add the current digit/number to the new array
       spacedArr.push(num);
 
       // If the index is a multiple of 4, add a space
-      if ((index + 1) % 4 === 0 && index < 15 && numsArr[index + 1] !== ' ') {
+      if ((index + 1) % 4 === 0 && index < 18 && numsArr[index + 1] !== ' ') {
         spacedArr.push(' ');
       }
 
