@@ -25,30 +25,34 @@ class Card {
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
-    this.attachingEvent();
+    // this.attachingEvent();
   }
 
   attachingEvent() {
+    console.log('Attaching Event');
     inputCardNumber.addEventListener('input', () => {
-      this._formatCardNumber();
-    })
+      this._formatCardNumber(inputCardNumber.value);
+    });
   }
 
-  _formatCardNumber(){
-    const cardNumber = this.number;
+  _formatCardNumber(inputValue) {
+    console.log('Formatting Event');
+    const cardNumber = inputValue.replace(/\s/g, ''); // Remove existing spaces
+    console.log(cardNumber);
     let formattedNumber = '';
-
+  
     for (let i = 0; i < cardNumber.length; i++) {
       formattedNumber += cardNumber[i];
-
+  
       if ((i + 1) % 4 === 0 && i !== cardNumber.length - 1) {
         formattedNumber += ' ';
       }
     }
-
+  
     this.number = formattedNumber;
+    inputCardNumber.value = this.number;
   }
-
+  
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -67,10 +71,6 @@ class Card {
       this._allErrorMessage(0);
     }
   }
-
-  // _validateExpDate(){
-
-  // }
 
   // The form method
   _form(e) {
@@ -97,13 +97,20 @@ class Card {
     visualCardCvc.textContent = `${this.#cvc}`;
     this._splitYear();
   }
-
 }
 
-// inputCardNumber.addEventListener('input', () => {
-//   console.log('Input event fired');
-//   inputCardNumber.value = Card._fourDigitSpacing(inputCardNumber.value);
-// });
+document.addEventListener('DOMContentLoaded', event => {
+  // Assuming your class is named Card
+  let card = new Card(
+    inputCardholder.value,
+    inputCardNumber.value,
+    inputCardMonth.value,
+    inputCardYear.value,
+    inputCardCvc.value
+  );
+
+  card.attachingEvent()
+});
 
 // The form event listener
 atmForm.addEventListener('submit', function (e) {
@@ -119,4 +126,3 @@ atmForm.addEventListener('submit', function (e) {
 
   userCard._form(e);
 });
-
