@@ -12,7 +12,7 @@ const visualCardName = document.querySelector('.visual-card-name');
 const visualCardNumber = document.querySelector('.visual-card-number');
 const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
-const allErrorSpan = document.querySelectorAll('error-hidden')
+const allErrorSpan = document.querySelectorAll('error-hidden');
 
 // Creating the Card class
 
@@ -25,6 +25,7 @@ class Card {
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
+    // this._fourDigitSpacing();
   }
 
   // Method for validating the form
@@ -34,15 +35,15 @@ class Card {
     }
   }
 
-  _validateName(){
-    if(this.name !== '' || this.surname !== ''){
-      this._allErrorMessage(0)
+  _validateName() {
+    if (this.name !== '' || this.surname !== '') {
+      this._allErrorMessage(0);
     }
   }
 
-  _validateNumber(){
-    if(this.number === ''){
-      this._allErrorMessage(0)
+  _validateNumber() {
+    if (this.number === '') {
+      this._allErrorMessage(0);
     }
   }
 
@@ -57,7 +58,6 @@ class Card {
     this._validateName();
     this._updateCard();
     this._splitYear();
-    this._fourDigitSpacing();
     // console.log('This form has been submitted');
     // console.log(
     //   this.name,
@@ -69,40 +69,52 @@ class Card {
     // );
   }
 
-  _allErrorMessage(i){
+  _allErrorMessage(i) {
     allErrorSpan.forEach((err, index, arr) => {
-      arr[i].classList.remove('hidden')
-    })
+      arr[i].classList.remove('hidden');
+    });
   }
 
-  _splitYear(){
-    const twoDigitYear = this.year.slice(2,4)
-    visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`
+  _splitYear() {
+    const twoDigitYear = this.year.slice(2, 4);
+    visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`;
   }
 
-  _updateCard(){
+  _updateCard() {
     visualCardName.textContent = `${this.surname} ${this.name}`;
-    visualCardCvc.textContent = `${this.#cvc}`
+    visualCardCvc.textContent = `${this.#cvc}`;
     this._splitYear();
   }
 
-  _fourDigitSpacing(){
-    const numberArray = this.number.split('')
-    const numArray = numberArray.map((num, index) => {
-      if(index % 4 === 0){
-        return num + ' '
-      }else{
-        return num
+  _fourDigitSpacing() {
+    // Convert the number to a string and then to an array of characters
+    const numsArr = this.number.toString().split('');
+
+    // If the number has more than 16 digits, ignore the extra digits
+    if (numsArr.length > 16) {
+      numsArr.length = 16;
+    }
+    this._spacingNums();
+  }
+
+  _spacingNums() {
+    // Create a new array for storing the digits and spaces
+    const spacedArr = [];
+
+    // Loop through the array of numbers
+    numsArr.forEach((num, index) => {
+      // Add the current digit/number to the new array
+      spacedArr.push(num);
+
+      // If the index is a multiple of 4, add a space
+      if ((index + 1) % 4 === 0) {
+        spacedArr.push(' ');
       }
-    })
-    const numString = numArray.join('')
-    visualCardNumber.textContent = numString
-  }
-  _maxTwentyNum(){
 
+      // Converth the new spacedArr back to a string
+      return spacedArr.join('');
+    });
   }
-  
-
 }
 
 // The form event listener
