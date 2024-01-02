@@ -103,7 +103,7 @@ class Card {
       spacedArr.push(num);
 
       // If the index is a multiple of 4, add a space
-      if ((index + 1) % 4 === 0 && index < 18 && numsArr[index + 1] !== ' ') {
+      if (digitCounter % 4 === 0 && index < 18 && numsArr[index + 1] !== ' ') {
         spacedArr.push(' ');
       }
 
