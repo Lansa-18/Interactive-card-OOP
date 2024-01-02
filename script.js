@@ -78,11 +78,11 @@ class Card {
     this._splitYear();
   }
 
-  // _allErrorMessage(i) {
-  //   allErrorSpan.forEach((err, index, arr) => {
-  //     arr[i].classList.remove('hidden');
-  //   });
-  // }
+  _allErrorMessage() {
+    allErrorSpan.forEach((err, index, arr) => {
+      err.classList.remove('hidden');
+    });
+  }
 
   _splitYear() {
     const twoDigitYear = this.year.slice(2, 4);
