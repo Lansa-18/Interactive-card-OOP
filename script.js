@@ -29,16 +29,13 @@ class Card {
   }
 
   attachingEvent() {
-    console.log('Attaching Event');
     inputCardNumber.addEventListener('input', () => {
       this._formatCardNumber(inputCardNumber.value);
     });
   }
 
   _formatCardNumber(inputValue) {
-    console.log('Formatting Event');
     const cardNumber = inputValue.replace(/\s/g, ''); // Remove existing spaces
-    console.log(cardNumber);
     let formattedNumber = '';
   
     for (let i = 0; i < cardNumber.length; i++) {
