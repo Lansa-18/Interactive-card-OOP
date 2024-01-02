@@ -25,10 +25,11 @@ class Card {
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
-    
+
     inputCardNumber.addEventListener('input', () => {
-      this.number = this._fourDigitSpacing(inputCardNumber.value)
-    })
+      console.log('Input event fired');
+      this.number = this._fourDigitSpacing(inputCardNumber.value);
+    });
   }
 
   // Method for validating the form
@@ -83,15 +84,13 @@ class Card {
   _fourDigitSpacing(inputValue) {
     // Convert the number to a string and then to an array of characters
     const numsArr = inputValue.toString().split('');
+    console.log(numsArr);
 
     // If the number has more than 16 digits, ignore the extra digits
     if (numsArr.length > 16) {
       numsArr.length = 16;
+      console.log(numsArr);
     }
-    this._spacingNums();
-  }
-
-  _spacingNums() {
     // Create a new array for storing the digits and spaces
     const spacedArr = [];
 
@@ -106,9 +105,30 @@ class Card {
       }
 
       // Converth the new spacedArr back to a string
-      return spacedArr.join('');
+      console.log(spacedArr.join(''));
+      // return spacedArr.join('');
     });
+    // this._spacingNums();
   }
+
+  // _spacingNums() {
+  //   // Create a new array for storing the digits and spaces
+  //   const spacedArr = [];
+
+  //   // Loop through the array of numbers
+  //   numsArr.forEach((num, index) => {
+  //     // Add the current digit/number to the new array
+  //     spacedArr.push(num);
+
+  //     // If the index is a multiple of 4, add a space
+  //     if ((index + 1) % 4 === 0) {
+  //       spacedArr.push(' ');
+  //     }
+
+  //     // Converth the new spacedArr back to a string
+  //     return spacedArr.join('');
+  //   });
+  // }
 }
 
 // The form event listener
