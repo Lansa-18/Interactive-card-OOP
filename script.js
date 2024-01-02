@@ -25,11 +25,6 @@ class Card {
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
-
-    inputCardNumber.addEventListener('input', () => {
-      console.log('Input event fired');
-      this.number = this._fourDigitSpacing(inputCardNumber.value);
-    });
   }
 
   // Method for validating the form
@@ -81,7 +76,7 @@ class Card {
     this._splitYear();
   }
 
-  _fourDigitSpacing(inputValue) {
+  static _fourDigitSpacing(inputValue) {
     // Convert the number to a string and then to an array of characters
     const numsArr = inputValue.toString().split('');
     console.log(numsArr);
@@ -100,14 +95,14 @@ class Card {
       spacedArr.push(num);
 
       // If the index is a multiple of 4, add a space
-      if ((index + 1) % 4 === 0) {
+      if ((index + 1) % 4 === 0 && index < 15 && numsArr[index + 1] !== ' ') {
         spacedArr.push(' ');
       }
 
-      // Converth the new spacedArr back to a string
-      console.log(spacedArr.join(''));
-      // return spacedArr.join('');
     });
+
+    // Convert the new spacedArr back to a string
+    return spacedArr.join('');
     // this._spacingNums();
   }
 
@@ -131,6 +126,12 @@ class Card {
   // }
 }
 
+inputCardNumber.addEventListener('input', () => {
+  console.log('Input event fired');
+  inputCardNumber.value = Card._fourDigitSpacing(inputCardNumber.value);
+});
+
+
 // The form event listener
 atmForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -146,3 +147,5 @@ atmForm.addEventListener('submit', function (e) {
   userCard._form(e);
   // userCard._updateCard();
 });
+
+
