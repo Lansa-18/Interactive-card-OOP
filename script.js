@@ -103,10 +103,14 @@ class Card {
       spacedArr.push(num);
 
       // If the index is a multiple of 4, add a space
-      if (digitCounter % 4 === 0 && index < 18 && numsArr[index + 1] !== ' ') {
+      if (
+        digitCounter % 4 === 0 &&
+        digitCounter < 16 &&
+        !isNaN(spacedArr[spacedArr.length - 1]) &&
+        !isNaN(numsArr[index + 1])
+      ) {
         spacedArr.push(' ');
       }
-
     });
 
     // Convert the new spacedArr back to a string
@@ -139,7 +143,6 @@ inputCardNumber.addEventListener('input', () => {
   inputCardNumber.value = Card._fourDigitSpacing(inputCardNumber.value);
 });
 
-
 // The form event listener
 atmForm.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -155,5 +158,3 @@ atmForm.addEventListener('submit', function (e) {
   userCard._form(e);
   // userCard._updateCard();
 });
-
-
