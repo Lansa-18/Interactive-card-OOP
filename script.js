@@ -59,7 +59,7 @@ class Card {
 
   _validateName() {
     if (this.name !== '' || this.surname !== '') {
-      this._allErrorMessage(0);
+      // this._allErrorMessage(0);
     }
   }
 
@@ -93,6 +93,7 @@ class Card {
     visualCardName.textContent = `${this.surname} ${this.name}`;
     visualCardCvc.textContent = `${this.#cvc}`;
     this._splitYear();
+    visualCardNumber.textContent = `${inputCardNumber.value}`;
   }
 }
 
