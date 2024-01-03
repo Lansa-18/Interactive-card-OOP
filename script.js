@@ -65,8 +65,8 @@ class Card {
       this._allErrorMessage(0);
       this._resetCard();
     } else {
+
       this._updateCard();
-      console.log('Informations are correct');
       this._removeErrorMessage(0);
     }
   }
@@ -75,14 +75,14 @@ class Card {
     // Checking if the number contains strings in it
     const containsLetters = /[a-zA-Z]/.test(this.number);
 
-    if (!containsLetters) {
+    if (containsLetters) {
       this._updateCard();
       console.log('Informations are correct');
       this._removeErrorMessage(1);
+    } else {
+      this._allErrorMessage(1);
+      this._resetCard();
     }
-    this._allErrorMessage(1);
-    this._resetCard();
-    
   }
 
   // The form method
