@@ -61,6 +61,8 @@ class Card {
     if ((this.name).includes('') || (this.surname).includes('')) {
       this._allErrorMessage(0);
       this._resetCard();
+    } else {
+      this._updateCard();
     }
   }
 
@@ -76,7 +78,6 @@ class Card {
     this._updateCard();
     this._validateForm();
     this._validateName();
-    this._splitYear();
   }
 
   _allErrorMessage(index) {
@@ -93,8 +94,8 @@ class Card {
   _updateCard() {
     visualCardName.textContent = `${this.surname} ${this.name}`;
     visualCardCvc.textContent = `${this.#cvc}`;
-    this._splitYear();
     visualCardNumber.textContent = `${inputCardNumber.value}`;
+    this._splitYear();
   }
 
   _resetCard(){
@@ -103,6 +104,8 @@ class Card {
     visualCardExpDate.textContent = '00/00';
     visualCardNumber.textContent = '0000 0000 0000 0000';
   }
+
+
 }
 
 document.addEventListener('DOMContentLoaded', event => {
