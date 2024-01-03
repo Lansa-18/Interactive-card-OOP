@@ -34,28 +34,35 @@ class Card {
     });
   }
 
-  attachingEvent2(){
-    inputCardMonth.addEventListener('input', () => {
-      this._validateMonth(inputCardMonth.value);
-    });
-  }
-
   _formatCardNumber(inputValue) {
     const cardNumber = inputValue.replace(/\s/g, ''); // Remove existing spaces
     let formattedNumber = '';
-  
+
     for (let i = 0; i < cardNumber.length; i++) {
       formattedNumber += cardNumber[i];
-  
+
       if ((i + 1) % 4 === 0 && i !== cardNumber.length - 1) {
         formattedNumber += ' ';
       }
     }
-  
+
     this.number = formattedNumber;
     inputCardNumber.value = this.number;
   }
-  
+
+  attachingEvent2() {
+    inputCardMonth.addEventListener('input', () => {
+      this._checkMonth(inputCardMonth.value);
+    });
+  }
+
+  _checkMonth(inputMonth) {
+    if (inputMonth.length > 2) {
+      this.month = inputMonth.slice(0, 2);
+      inputCardMonth.value = this.month;
+    }
+  }
+
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -65,13 +72,12 @@ class Card {
 
   _validateName() {
     // testing if both name and surname contain digits
-    const containNumbers = /\d/.test(`${this.name} ${this.surname}`)
+    const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
 
     if (containNumbers) {
       this._allErrorMessage(0);
       this._resetCard();
     } else {
-
       this._updateCard();
       this._removeErrorMessage(0);
     }
@@ -95,16 +101,7 @@ class Card {
     this._validateMonth();
   }
 
-  _validateMonth(inputMonth) {
-    if (inputMonth.length > 2) {
-      this.month = inputCardMonth.value.slice(0, 2);
-      console.log('Month has been truncated');
-  }
-  }
-
-  _validateYear() {
-
-  }
+  _validateYear() {}
 
   // The form method
   _form(e) {
@@ -139,14 +136,12 @@ class Card {
     this._splitYear();
   }
 
-  _resetCard(){
+  _resetCard() {
     visualCardName.textContent = 'Jane AppleSeed';
     visualCardCvc.textContent = '000';
     visualCardExpDate.textContent = '00/00';
     visualCardNumber.textContent = '0000 0000 0000 0000';
   }
-
-
 }
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -159,8 +154,8 @@ document.addEventListener('DOMContentLoaded', event => {
     inputCardCvc.value
   );
 
-  userCard.attachingEvent1()
-  userCard.attachingEvent2()
+  userCard.attachingEvent1();
+  userCard.attachingEvent2();
 });
 
 // The form event listener
