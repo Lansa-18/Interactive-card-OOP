@@ -85,6 +85,18 @@ class Card {
     }
   }
 
+  _validateExpDate() {
+
+  }
+
+  _validateMonth() {
+
+  }
+  
+  _validateYear() {
+
+  }
+
   // The form method
   _form(e) {
     e.preventDefault();
