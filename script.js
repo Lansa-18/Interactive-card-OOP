@@ -58,12 +58,12 @@ class Card {
   }
 
   _validateName() {
-    if ((this.name).includes(Number) || (this.surname).includes(Number)) {
-      this._allErrorMessage(0);
-      this._resetCard();
-    } else {
+    if (isNaN(this.name) || isNaN(this.surname)) {
       this._updateCard();
       console.log('Informations are correct');
+    } else {
+      this._allErrorMessage(0);
+      this._resetCard();
     }
   }
 
