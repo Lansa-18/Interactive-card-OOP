@@ -98,9 +98,9 @@ class Card {
     }
   }
 
-  _validateExpDate() {
-    this._validateMonth();
-  }
+  // _validateExpDate() {
+  //   this._validateMonth();
+  // }
 
   _validateMonth(monthInput) {
     // Checking if the month input is empty
@@ -121,7 +121,7 @@ class Card {
     this._validateForm();
     this._validateName();
     this._validateNumber();
-    this._validateMonth();
+    this._validateMonth(inputCardMonth.value);
   }
 
   _allErrorMessage(index) {
