@@ -73,9 +73,9 @@ class Card {
   // The form method
   _form(e) {
     e.preventDefault();
+    this._updateCard();
     this._validateForm();
     this._validateName();
-    this._updateCard();
     this._splitYear();
   }
 
@@ -95,6 +95,13 @@ class Card {
     visualCardCvc.textContent = `${this.#cvc}`;
     this._splitYear();
     visualCardNumber.textContent = `${inputCardNumber.value}`;
+  }
+
+  _resetCard(){
+    visualCardName.textContent = 'John Doe';
+    visualCardCvc.textContent = '000';
+    visualCardExpDate.textContent = '00/00';
+    visualCardNumber.textContent = '0000 0000 0000 0000';
   }
 }
 
