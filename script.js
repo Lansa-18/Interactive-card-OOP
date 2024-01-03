@@ -76,12 +76,12 @@ class Card {
     const containsLetters = /[a-zA-Z]/.test(this.number);
 
     if (containsLetters) {
+      this._allErrorMessage(1);
+      this._resetCard();
+    } else {
       this._updateCard();
       console.log('Informations are correct');
       this._removeErrorMessage(1);
-    } else {
-      this._allErrorMessage(1);
-      this._resetCard();
     }
   }
 
@@ -118,7 +118,7 @@ class Card {
   }
 
   _resetCard(){
-    visualCardName.textContent = 'John Doe';
+    visualCardName.textContent = 'Jane AppleSeed';
     visualCardCvc.textContent = '000';
     visualCardExpDate.textContent = '00/00';
     visualCardNumber.textContent = '0000 0000 0000 0000';
