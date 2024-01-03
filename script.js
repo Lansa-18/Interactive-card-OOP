@@ -60,6 +60,7 @@ class Card {
   _validateName() {
     if ((this.name).includes('') || (this.surname).includes('')) {
       this._allErrorMessage(0);
+      visualCardName.textContent = 'Invalid Name';
     }
   }
 
