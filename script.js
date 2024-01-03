@@ -58,8 +58,8 @@ class Card {
   }
 
   _validateName() {
-    if (this.name !== '' || this.surname !== '') {
-      // this._allErrorMessage(0);
+    if ((this.name).includes('') || (this.surname).includes('')) {
+      this._allErrorMessage(0);
     }
   }
 
