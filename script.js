@@ -90,6 +90,7 @@ class Card {
     e.preventDefault();
     this._validateForm();
     this._validateName();
+    this._validateNumber();
   }
 
   _allErrorMessage(index) {
