@@ -60,6 +60,7 @@ class Card {
   _validateName() {
     // testing if both name and surname contain digits
     const containNumbers = /\d/.test(`${this.name} ${this.surname}`)
+
     if (containNumbers) {
       this._allErrorMessage(0);
       this._resetCard();
@@ -71,15 +72,22 @@ class Card {
   }
 
   _validateNumber() {
-    if (this.number) {
-      this._allErrorMessage(1);
+    // Checking if the number contains strings in it
+    const containsLetters = /[a-zA-Z]/.test(this.number);
+
+    if (!containsLetters) {
+      this._updateCard();
+      console.log('Informations are correct');
+      this._removeErrorMessage(1);
     }
+    this._allErrorMessage(1);
+    this._resetCard();
+    
   }
 
   // The form method
   _form(e) {
     e.preventDefault();
-    // this._updateCard();
     this._validateForm();
     this._validateName();
   }
