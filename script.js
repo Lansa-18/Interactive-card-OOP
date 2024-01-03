@@ -28,9 +28,15 @@ class Card {
     // this.attachingEvent();
   }
 
-  attachingEvent() {
+  attachingEvent1() {
     inputCardNumber.addEventListener('input', () => {
       this._formatCardNumber(inputCardNumber.value);
+    });
+  }
+
+  attachingEvent2(){
+    inputCardMonth.addEventListener('input', () => {
+      this._validateMonth(inputCardMonth.value);
     });
   }
 
@@ -86,11 +92,14 @@ class Card {
   }
 
   _validateExpDate() {
-
+    this._validateMonth();
   }
 
-  _validateMonth() {
-    
+  _validateMonth(inputMonth) {
+    if (inputMonth.length > 2) {
+      this.month = inputCardMonth.value.slice(0, 2);
+      console.log('Month has been truncated');
+  }
   }
 
   _validateYear() {
@@ -103,6 +112,7 @@ class Card {
     this._validateForm();
     this._validateName();
     this._validateNumber();
+    this._validateMonth();
   }
 
   _allErrorMessage(index) {
@@ -149,7 +159,8 @@ document.addEventListener('DOMContentLoaded', event => {
     inputCardCvc.value
   );
 
-  userCard.attachingEvent()
+  userCard.attachingEvent1()
+  userCard.attachingEvent2()
 });
 
 // The form event listener
