@@ -66,7 +66,7 @@ class Card {
     } else {
       this._updateCard();
       console.log('Informations are correct');
-
+      this._removeErrorMessage(0);
     }
   }
 
