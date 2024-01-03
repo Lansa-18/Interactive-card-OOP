@@ -58,12 +58,15 @@ class Card {
   }
 
   _validateName() {
-    if (isNaN(this.name) || isNaN(this.surname)) {
-      this._updateCard();
-      console.log('Informations are correct');
-    } else {
+    // testing if both name and surname contain digits
+    const containNumbers = /\d/.test(`${this.name} ${this.surname}`)
+    if (containNumbers) {
       this._allErrorMessage(0);
       this._resetCard();
+    } else {
+      this._updateCard();
+      console.log('Informations are correct');
+
     }
   }
 
@@ -84,6 +87,12 @@ class Card {
   _allErrorMessage(index) {
     allErrorSpan.forEach((err, i, arr) => {
       arr[index].classList.remove('hidden');
+    });
+  }
+
+  _removeErrorMessage(index) {
+    allErrorSpan.forEach((err, i, arr) => {
+      arr[index].classList.add('hidden');
     });
   }
 
