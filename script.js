@@ -63,6 +63,8 @@ class Card {
     }
   }
 
+
+
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -92,13 +94,23 @@ class Card {
       this._resetCard();
     } else {
       this._updateCard();
-      console.log('Informations are correct');
       this._removeErrorMessage(1);
     }
   }
 
   _validateExpDate() {
     this._validateMonth();
+  }
+
+  _validateMonth(monthInput) {
+    // Checking if the month input is empty
+    if (monthInput.trim() === '') {
+      this._allErrorMessage(2);
+      this._resetCard();
+    } else {
+      this._updateCard();
+      this._removeErrorMessage(2);
+    }
   }
 
   _validateYear() {}
