@@ -99,7 +99,7 @@ class Card {
 
 document.addEventListener('DOMContentLoaded', event => {
   // Assuming your class is named Card
-  let card = new Card(
+  let userCard = new Card(
     inputCardholder.value,
     inputCardNumber.value,
     inputCardMonth.value,
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', event => {
     inputCardCvc.value
   );
 
-  card.attachingEvent()
+  userCard.attachingEvent()
 });
 
 // The form event listener
