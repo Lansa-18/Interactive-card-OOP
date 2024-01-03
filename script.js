@@ -58,11 +58,12 @@ class Card {
   }
 
   _validateName() {
-    if ((this.name).includes('') || (this.surname).includes('')) {
+    if ((this.name).includes(Number) || (this.surname).includes(Number)) {
       this._allErrorMessage(0);
       this._resetCard();
     } else {
       this._updateCard();
+      console.log('Informations are correct');
     }
   }
 
@@ -75,7 +76,7 @@ class Card {
   // The form method
   _form(e) {
     e.preventDefault();
-    this._updateCard();
+    // this._updateCard();
     this._validateForm();
     this._validateName();
   }
