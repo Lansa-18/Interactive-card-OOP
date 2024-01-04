@@ -58,6 +58,18 @@ class Card {
       errorIndices.push(2);
     }
 
+    if (!this._validateYear(inputCardYear.value)) {
+      isValid = false;
+      errorIndices.push(3);
+    }
+
+    if (!this._validateCvc(inputCardCvc.value)) {
+      isValid = false;
+      errorIndices.push(4);
+    }
+
+
+
     if (isValid) {
       this._updateCard();
       this._removeErrorMessage(errorIndices);
@@ -102,6 +114,32 @@ class Card {
     }
   }
 
+  attachingEvent3() {
+    inputCardYear.addEventListener('input', () => {
+      this._checkYear(inputCardYear.value);
+    });
+  }
+
+  _checkYear(inputYear) {
+    if (inputYear.length > 4) {
+      this.year = inputYear.slice(0, 4);
+      inputCardYear.value = this.year;
+    }
+  }
+
+  attachingEvent4() {
+    inputCardCvc.addEventListener('input', () => {
+      this._checkCvc(inputCardCvc.value);
+    });
+  }
+
+  _checkCvc(inputCvc) {
+    if (inputCvc.length > 3) {
+      this.#cvc = inputCvc.slice(0, 3);
+      inputCardCvc.value = this.#cvc;
+    }
+  }
+
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -126,11 +164,17 @@ class Card {
     return monthInput.trim() === '' ? false : true;
   }
 
-  _validateYear() {}
+  _validateYear(yearInput) {
+    // Checking if the year input is empty
+    return yearInput.trim() === '' ? false : true;
+  }
 
-  // _validator(caseStudy, index){
+  _validateCvc(cvcInput) {
+    // Checking if the cvc input is empty
+    return cvcInput.trim() === '' ? false : true;
+  }
 
-  // }
+
 
   _allErrorMessage(indices) {
     allErrorSpan.forEach((err, i, arr) => {
@@ -173,6 +217,8 @@ document.addEventListener('DOMContentLoaded', event => {
 
   userCard.attachingEvent1();
   userCard.attachingEvent2();
+  userCard.attachingEvent3();
+  userCard.attachingEvent4();
 });
 
 // The form event listener
