@@ -234,7 +234,12 @@ class Card {
   _validateMonth(monthInput) {
     // Checking if the month input is empty
     return monthInput.trim() === '' ? false : true;
+  }
 
+  _invalidMonth(monthInput) {
+    if (monthInput.value < 1 || monthInput.value > 12) {
+      alert('Invalid month');
+    }
   }
 
   _validateYear(yearInput) {
@@ -263,16 +268,15 @@ class Card {
     });
   }
 
-  _splitYear() {
-    const twoDigitYear = this.year.slice(2, 4);
-    visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`;
-  }
+  // _splitYear() {
+  //   const twoDigitYear = this.year.slice(2, 4);
+  //   visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`;
+  // }
 
   _updateCard() {
     visualCardName.textContent = `${this.surname} ${this.name}`;
     visualCardCvc.textContent = `${this.#cvc}`;
     visualCardNumber.textContent = `${inputCardNumber.value}`;
-    this._splitYear();
   }
 }
 
