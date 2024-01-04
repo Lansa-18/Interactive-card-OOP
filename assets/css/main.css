@@ -63,11 +63,20 @@ header {
 }
 
 .cardholder__content--button {
+  border: none;
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  margin-top: 3rem;
+}
+
+.thank-you-button {
   background-color: hsl(278, 68%, 11%);
   color: hsl(0, 0%, 100%);
   border: none;
   width: 100%;
-  margin-top: 3rem;
   padding: 1rem 0;
   border-radius: 0.5rem;
 }
@@ -262,9 +271,10 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
+  width: 25%;
 }
 .thank-you img {
-  width: 40%;
+  width: 35%;
 }
 .thank-you h3 {
   font-size: 2.2rem;
