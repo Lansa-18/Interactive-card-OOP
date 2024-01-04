@@ -13,6 +13,7 @@ const visualCardNumber = document.querySelector('.visual-card-number');
 const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('#error-hidden');
+const thankYouMsg = document.querySelector('.thank-you');
 
 // Creating the Card class
 
@@ -202,6 +203,10 @@ class Card {
     visualCardCvc.textContent = `${this.#cvc}`;
     visualCardNumber.textContent = `${inputCardNumber.value}`;
     this._splitYear();
+  }
+
+  _thankYou() {
+
   }
 }
 

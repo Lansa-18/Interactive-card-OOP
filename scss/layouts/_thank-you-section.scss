@@ -1,11 +1,12 @@
 @use '../abstracts/' as *;
 
-.thank-you {
+.thank-you-div {
   position: absolute;
   top: 50%;
   left: 70%;
   transform: translate(-50%, -50%);
-  @include flex-vertical;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 1.2rem;
   width: 25%;

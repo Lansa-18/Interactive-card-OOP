@@ -262,7 +262,7 @@ header {
   position: relative;
 }
 
-.thank-you {
+.thank-you-div {
   position: absolute;
   top: 50%;
   left: 70%;
@@ -273,16 +273,16 @@ header {
   gap: 1.2rem;
   width: 25%;
 }
-.thank-you img {
+.thank-you-div img {
   width: 35%;
 }
-.thank-you h3 {
+.thank-you-div h3 {
   font-size: 2.2rem;
   text-transform: uppercase;
   font-weight: 450;
   color: hsl(278, 68%, 11%);
 }
-.thank-you p {
+.thank-you-div p {
   color: hsl(279, 6%, 55%);
   font-size: 1.2rem;
 }
