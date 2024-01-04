@@ -20,6 +20,7 @@ const cardNameDetails = visualCardName.textContent;
 const cardNumberDetails = visualCardNumber.textContent;
 const cardCvcDetails = visualCardCvc.textContent;
 
+
 // Creating the Card class
 
 class Card {
@@ -158,6 +159,12 @@ class Card {
     });
   }
 
+  attachingEvent6() {
+    inputCardholder.addEventListener('input', () => {
+      this._updateNameRealTime();
+    });
+  }
+
   _showthankYou() {
     formInputs.classList.add('special-hidden');
     thankYouMsg.classList.remove('special-hidden');
@@ -166,6 +173,14 @@ class Card {
   _showForm() {
     formInputs.classList.remove('special-hidden');
     thankYouMsg.classList.add('special-hidden');
+  }
+
+  _updateNameRealTime() {
+    if (inputCardholder.value === '') {
+      visualCardName.textContent = cardNameDetails;
+    } else {
+      visualCardName.textContent = inputCardholder.value;
+    }
   }
 
   // Method for validating the form
@@ -246,6 +261,7 @@ document.addEventListener('DOMContentLoaded', event => {
   userCard.attachingEvent3();
   userCard.attachingEvent4();
   userCard.attachingEvent5();
+  userCard.attachingEvent6();
 });
 
 // The form event listener
