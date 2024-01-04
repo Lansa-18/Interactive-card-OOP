@@ -21,7 +21,7 @@
       <div class="gradient__left">
         <img src="./images/bg-main-desktop.png" alt="gradient-img-desktop" />
       </div>
-      <div class="white__right">
+      <div class="special-hidden white__right">
         <section class="cardholder__container">
           <form class="card-form" action="">
             <section class="cardholder__content cardholder__content--name">
@@ -32,7 +32,9 @@
                 required
                 placeholder="e.g. Jane Appleseed"
               />
-              <span id="error-hidden" class="hidden">Wrong Format, text only</span>
+              <span id="error-hidden" class="hidden"
+                >Wrong Format, text only</span
+              >
             </section>
 
             <section class="cardholder__content cardholder__content--number">
@@ -44,7 +46,9 @@
                 placeholder="e.g. 1234 5678 9123 0000"
                 maxlength="19"
               />
-              <span id="error-hidden" class="hidden">Wrong Format, numbers only</span>
+              <span id="error-hidden" class="hidden"
+                >Wrong Format, numbers only</span
+              >
             </section>
 
             <section class="cardholder__expiry--flex">
@@ -58,7 +62,9 @@
                       class="card-month"
                       placeholder="MM"
                     />
-                    <span id="error-hidden" class="hidden special-error">Can't be blank</span>
+                    <span id="error-hidden" class="hidden special-error"
+                      >Can't be blank</span
+                    >
                   </div>
                   <div class="card__date card__date2">
                     <input
@@ -67,7 +73,9 @@
                       class="card-year"
                       placeholder="YY"
                     />
-                    <span id="error-hidden" class="hidden special-error">Can't be blank</span>
+                    <span id="error-hidden" class="hidden special-error"
+                      >Can't be blank</span
+                    >
                   </div>
                 </section>
               </div>
@@ -81,7 +89,9 @@
                     id="card-cvc"
                     placeholder="e.g. 123"
                   />
-                  <span id="error-hidden" class="hidden special-error">Can't be blank</span>
+                  <span id="error-hidden" class="hidden special-error"
+                    >Can't be blank</span
+                  >
                 </section>
               </div>
             </section>
@@ -91,10 +101,6 @@
             </button>
           </form>
         </section>
-      </div>
-
-      <div class="thank-you">
-        
       </div>
     </section>
 
@@ -112,18 +118,21 @@
           <p>0000</p> -->
         </div>
         <div class="atm__card--front-content-bottom">
-          <p class="visual-card-name">
-            Jane Appleseed
-          </p>
-          <span class="visual-card-expiry-date">
-            00/00
-          </span>
+          <p class="visual-card-name">Jane Appleseed</p>
+          <span class="visual-card-expiry-date"> 00/00 </span>
         </div>
       </div>
     </section>
 
     <section class="atm__card--back">
       <p class="atm__card--cvc">000</p>
+    </section>
+
+    <section class="thank-you">
+      <img src="./images/icon-complete.svg" alt="complete-logo" />
+      <h3>Thank You</h3>
+      <p>We've added your card details</p>
+      <button type="submit" class="cardholder__content--button">Continue</button>
     </section>
   </body>
 </html>

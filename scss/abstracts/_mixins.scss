@@ -24,8 +24,6 @@ $breakpoints: (
   }
 }
 
-
-
 @mixin m-auto {
   width: 85%;
   margin: auto;
@@ -49,12 +47,12 @@ $breakpoints: (
   transform: translate(-50%, -50%);
 }
 
-@mixin flex-vertical{
+@mixin flex-vertical {
   display: flex;
   flex-direction: column;
 }
 
-@mixin bg-format{
+@mixin bg-format {
   background-repeat: no-repeat;
   background-size: contain;
   width: 31.5rem;

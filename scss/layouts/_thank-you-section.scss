@@ -1,0 +1,30 @@
+@use '../abstracts/' as *;
+
+.thank-you {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  border: 1px solid red;
+  @include flex-vertical;
+  align-items: center;
+  gap: 1.2rem;
+  //   width: 100%;
+  // height: 100vh;
+
+  img {
+    width: 40%;
+  }
+
+  h3{
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 450;
+    color: $very-dark-g-violet;
+  }
+
+  p{
+    color: $dark-g-violet;
+    font-size: 1.2rem;
+  }
+}
