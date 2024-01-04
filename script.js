@@ -58,7 +58,6 @@ class Card {
       errorIndices.push(2);
     }
 
-
     if (isValid) {
       this._updateCard();
       this._removeErrorMessage(errorIndices);
@@ -113,18 +112,18 @@ class Card {
   _validateName() {
     // testing if both name and surname contain digits
     const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
-    containNumbers ?  false :  true;
+    return containNumbers ? false : true;
   }
 
   _validateNumber() {
     // Checking if the number contains strings in it
     const containsLetters = /[a-zA-Z]/.test(this.number);
-    containsLetters ? false : true;
+    return containsLetters ? false : true;
   }
 
   _validateMonth(monthInput) {
     // Checking if the month input is empty
-    monthInput.trim() === '' ? false : true;
+    return monthInput.trim() === '' ? false : true;
   }
 
   _validateYear() {}
