@@ -43,21 +43,28 @@ class Card {
     let isValid = true;
     let errorIndices = [];
 
-    if (!this._validateName()){
-      isValid = false
-      errorIndices.push(0)
+    if (!this._validateName()) {
+      isValid = false;
+      errorIndices.push(0);
     }
 
-    if (!this._validateMonth(inputCardMonth.value)){
-      isValid = false
-      errorIndices.push(1)
+    if (!this._validateMonth(inputCardMonth.value)) {
+      isValid = false;
+      errorIndices.push(1);
     }
 
-    if (!this._validateNumber()){
-      isValid = false
-      errorIndices.push(2)
+    if (!this._validateNumber()) {
+      isValid = false;
+      errorIndices.push(2);
     }
 
+    if (isValid) {
+      this._updateCard();
+      this._removeErrorMessage(errorIndices);
+    } else {
+      this._allErrorMessage(errorIndices);
+      this._resetCard();
+    }
   }
 
   attachingEvent1() {
@@ -174,7 +181,7 @@ class Card {
     });
   }
 
-  _removeErrorMessage(index) {
+  _removeErrorMessage(indices) {
     // allErrorSpan.forEach((err, i, arr) => {
     //   arr[index].classList.add('hidden');
     // });
