@@ -39,9 +39,25 @@ class Card {
   _form(e) {
     e.preventDefault();
     this._validateForm();
-    this._validateMonth(inputCardMonth.value);
-    this._validateNumber();
-    this._validateName();
+
+    let isValid = true;
+    let errorIndices = [];
+
+    if (!this._validateName()){
+      isValid = false
+      errorIndices.push(0)
+    }
+
+    if (!this._validateMonth(inputCardMonth.value)){
+      isValid = false
+      errorIndices.push(1)
+    }
+
+    if (!this._validateNumber()){
+      isValid = false
+      errorIndices.push(2)
+    }
+
   }
 
   attachingEvent1() {
@@ -166,13 +182,13 @@ class Card {
     indices.forEach(index => {
       switch (index) {
         case 0:
-          allErrorSpan[0].classList.remove('hidden');
+          allErrorSpan[0].classList.add('hidden');
           break;
         case 1:
-          allErrorSpan[1].classList.remove('hidden');
+          allErrorSpan[1].classList.add('hidden');
           break;
         case 2:
-          allErrorSpan[2].classList.remove('hidden');
+          allErrorSpan[2].classList.add('hidden');
           break;
         default:
           console.log('No error message');
