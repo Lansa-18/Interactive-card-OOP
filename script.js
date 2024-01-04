@@ -159,47 +159,17 @@ class Card {
   // }
 
   _allErrorMessage(indices) {
-    // allErrorSpan.forEach((err, i, arr) => {
-    //   arr[index].classList.remove('hidden');
-    // });
-
-    indices.forEach(index => {
-      switch (index) {
-        case 0:
-          allErrorSpan[0].classList.remove('hidden');
-          break;
-        case 1:
-          allErrorSpan[1].classList.remove('hidden');
-          break;
-        case 2:
-          allErrorSpan[2].classList.remove('hidden');
-          break;
-        default:
-          console.log('No error message');
-          break;
+    allErrorSpan.forEach((err, i, arr) => {
+      if (indices.includes(i)) {
+        err.classList.remove('hidden');
       }
     });
   }
 
   _removeErrorMessage(indices) {
-    // allErrorSpan.forEach((err, i, arr) => {
-    //   arr[index].classList.add('hidden');
-    // });
-
-    indices.forEach(index => {
-      switch (index) {
-        case 0:
-          allErrorSpan[0].classList.add('hidden');
-          break;
-        case 1:
-          allErrorSpan[1].classList.add('hidden');
-          break;
-        case 2:
-          allErrorSpan[2].classList.add('hidden');
-          break;
-        default:
-          console.log('No error message');
-          break;
+    allErrorSpan.forEach((err, i, arr) => {
+      if (indices.includes(i)) {
+        err.classList.add('hidden');
       }
     });
   }
