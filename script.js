@@ -39,7 +39,7 @@ class Card {
   }
 
   _resetInputFields() {
-    
+    inputCardholder.value = inputCardNumber.value = inputCardMonth.value = inputCardYear.value = inputCardCvc.value = '';
   }
 
   _form(e) {
@@ -150,6 +150,8 @@ class Card {
   attachingEvent5() {
     thankYouBtn.addEventListener('click', () => {
       this._showForm();
+      this._resetCard();
+      this._resetInputFields();
     });
   }
 
