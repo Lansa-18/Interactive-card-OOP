@@ -28,6 +28,23 @@ class Card {
     // this.attachingEvent();
   }
 
+  // The form method
+  _resetCard() {
+    visualCardName.textContent = 'Jane AppleSeed';
+    visualCardCvc.textContent = '000';
+    visualCardExpDate.textContent = '00/00';
+    visualCardNumber.textContent = '0000 0000 0000 0000';
+  }
+
+  _form(e) {
+    e.preventDefault();
+    this._validateForm();
+    this._validateMonth(inputCardMonth.value);
+    this._validateNumber();
+    this._validateName();
+  }
+
+
   attachingEvent1() {
     inputCardNumber.addEventListener('input', () => {
       this._formatCardNumber(inputCardNumber.value);
@@ -63,8 +80,6 @@ class Card {
     }
   }
 
-
-
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -79,9 +94,11 @@ class Card {
     if (containNumbers) {
       this._allErrorMessage(0);
       this._resetCard();
+      return false // Validation failed
     } else {
       this._updateCard();
       this._removeErrorMessage(0);
+      return true // Validation passed
     }
   }
 
@@ -92,16 +109,14 @@ class Card {
     if (containsLetters) {
       this._allErrorMessage(1);
       this._resetCard();
+      return false // Validation failed
     } else {
       this._updateCard();
       this._removeErrorMessage(1);
+      return true // Validation passed
     }
   }
-
-  // _validateExpDate() {
-  //   this._validateMonth();
-  // }
-
+  
   _validateMonth(monthInput) {
     // Checking if the month input is empty
     if (monthInput.trim() === '') {
@@ -114,15 +129,6 @@ class Card {
   }
 
   _validateYear() {}
-
-  // The form method
-  _form(e) {
-    e.preventDefault();
-    this._validateForm();
-    this._validateName();
-    this._validateNumber();
-    this._validateMonth(inputCardMonth.value);
-  }
 
   _allErrorMessage(index) {
     allErrorSpan.forEach((err, i, arr) => {
@@ -146,13 +152,6 @@ class Card {
     visualCardCvc.textContent = `${this.#cvc}`;
     visualCardNumber.textContent = `${inputCardNumber.value}`;
     this._splitYear();
-  }
-
-  _resetCard() {
-    visualCardName.textContent = 'Jane AppleSeed';
-    visualCardCvc.textContent = '000';
-    visualCardExpDate.textContent = '00/00';
-    visualCardNumber.textContent = '0000 0000 0000 0000';
   }
 }
 

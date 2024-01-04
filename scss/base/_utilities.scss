@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .mobile {
@@ -17,4 +17,7 @@
   @include mq(640px) {
     display: none;
   }
+}
+
+.special-error{
 }
