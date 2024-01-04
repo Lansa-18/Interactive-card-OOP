@@ -120,6 +120,17 @@ class Card {
     inputCardMonth.addEventListener('input', () => {
       this._checkMonth(inputCardMonth.value);
     });
+    inputCardYear.addEventListener('input', () => {
+      this._checkYear(inputCardYear.value);
+    });
+    inputCardCvc.addEventListener('input', () => {
+      this._checkCvc(inputCardCvc.value);
+    });
+    thankYouBtn.addEventListener('click', () => {
+      this._showForm();
+      this._resetCard();
+      this._resetInputFields();
+    });
   }
 
   _checkMonth(inputMonth) {
@@ -129,23 +140,11 @@ class Card {
     }
   }
 
-  attachingEvent3() {
-    inputCardYear.addEventListener('input', () => {
-      this._checkYear(inputCardYear.value);
-    });
-  }
-
   _checkYear(inputYear) {
     if (inputYear.length > 4) {
       this.year = inputYear.slice(0, 4);
       inputCardYear.value = this.year;
     }
-  }
-
-  attachingEvent4() {
-    inputCardCvc.addEventListener('input', () => {
-      this._checkCvc(inputCardCvc.value);
-    });
   }
 
   _checkCvc(inputCvc) {
@@ -155,15 +154,7 @@ class Card {
     }
   }
 
-  attachingEvent5() {
-    thankYouBtn.addEventListener('click', () => {
-      this._showForm();
-      this._resetCard();
-      this._resetInputFields();
-    });
-  }
-
-  attachingEvent6() {
+  attachingEvent3() {
     inputCardholder.addEventListener('input', () => {
       this._updateNameRealTime();
     });
@@ -181,22 +172,23 @@ class Card {
     });
   }
 
+  
+  _showthankYou() {
+    formInputs.classList.add('special-hidden');
+    thankYouMsg.classList.remove('special-hidden');
+  }
+  
+  _showForm() {
+    formInputs.classList.remove('special-hidden');
+    thankYouMsg.classList.add('special-hidden');
+  }
+
   _updater(input, visual, card){
     if (input.value === '') {
       visual.textContent = card;
     } else {
       visual.textContent = input.value;
     }
-  }
-
-  _showthankYou() {
-    formInputs.classList.add('special-hidden');
-    thankYouMsg.classList.remove('special-hidden');
-  }
-
-  _showForm() {
-    formInputs.classList.remove('special-hidden');
-    thankYouMsg.classList.add('special-hidden');
   }
 
   _updateNameRealTime() {
@@ -296,9 +288,6 @@ document.addEventListener('DOMContentLoaded', event => {
   userCard.attachingEvent1();
   userCard.attachingEvent2();
   userCard.attachingEvent3();
-  userCard.attachingEvent4();
-  userCard.attachingEvent5();
-  userCard.attachingEvent6();
 });
 
 // The form event listener
