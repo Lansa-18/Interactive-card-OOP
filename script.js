@@ -38,6 +38,7 @@ class Card {
 
   _form(e) {
     e.preventDefault();
+    allErrorSpan.forEach(err => err.classList.add('hidden'));
     this._validateForm();
 
     let isValid = true;
@@ -48,15 +49,16 @@ class Card {
       errorIndices.push(0);
     }
 
-    if (!this._validateMonth(inputCardMonth.value)) {
+    if (!this._validateNumber()) {
       isValid = false;
       errorIndices.push(1);
     }
 
-    if (!this._validateNumber()) {
+    if (!this._validateMonth(inputCardMonth.value)) {
       isValid = false;
       errorIndices.push(2);
     }
+
 
     if (isValid) {
       this._updateCard();
@@ -114,12 +116,12 @@ class Card {
     const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
 
     if (containNumbers) {
-      this._allErrorMessage(0);
-      this._resetCard();
+      // this._allErrorMessage(0);
+      // this._resetCard();
       return false; // Validation failed
     } else {
-      this._updateCard();
-      this._removeErrorMessage(0);
+      // this._updateCard();
+      // this._removeErrorMessage(0);
       return true; // Validation passed
     }
   }
@@ -129,12 +131,12 @@ class Card {
     const containsLetters = /[a-zA-Z]/.test(this.number);
 
     if (containsLetters) {
-      this._allErrorMessage(1);
-      this._resetCard();
+      // this._allErrorMessage(1);
+      // this._resetCard();
       return false; // Validation failed
     } else {
-      this._updateCard();
-      this._removeErrorMessage(1);
+      // this._updateCard();
+      // this._removeErrorMessage(1);
       return true; // Validation passed
     }
   }
@@ -142,12 +144,12 @@ class Card {
   _validateMonth(monthInput) {
     // Checking if the month input is empty
     if (monthInput.trim() === '') {
-      this._allErrorMessage(2);
-      this._resetCard();
+      // this._allErrorMessage(2);
+      // this._resetCard();
       return false; // Validation failed
     } else {
-      this._updateCard();
-      this._removeErrorMessage(2);
+      // this._updateCard();
+      // this._removeErrorMessage(2);
       return true; // Validation passed
     }
   }
