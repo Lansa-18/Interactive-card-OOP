@@ -16,6 +16,9 @@ const allErrorSpan = document.querySelectorAll('#error-hidden');
 const thankYouMsg = document.querySelector('.thank-you');
 const formInputs = document.querySelector('.white__right');
 const thankYouBtn = document.querySelector('.thank-you-button');
+const cardNameDetails = visualCardName.textContent;
+const cardNumberDetails = visualCardNumber.textContent;
+const cardCvcDetails = visualCardCvc.textContent;
 
 // Creating the Card class
 
@@ -83,7 +86,7 @@ class Card {
       this._resetCard();
     }
 
-    this._showthankYou();
+    // this._showthankYou();
   }
 
   attachingEvent1() {

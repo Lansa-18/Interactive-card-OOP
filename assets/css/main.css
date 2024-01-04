@@ -121,6 +121,7 @@ header {
   border-radius: 0.4rem;
   position: relative;
   z-index: 1;
+  color: hsl(278, 68%, 11%);
 }
 .cardholder__container form input:focus {
   border: double 1.5px transparent;
