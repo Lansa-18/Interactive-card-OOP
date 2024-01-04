@@ -25,7 +25,6 @@ class Card {
     this.month = month;
     this.year = year;
     this.#cvc = cvc;
-    // this.attachingEvent();
   }
 
   // The form method
@@ -114,44 +113,18 @@ class Card {
   _validateName() {
     // testing if both name and surname contain digits
     const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
-
-    if (containNumbers) {
-      // this._allErrorMessage(0);
-      // this._resetCard();
-      return false; // Validation failed
-    } else {
-      // this._updateCard();
-      // this._removeErrorMessage(0);
-      return true; // Validation passed
-    }
+    containNumbers ?  false :  true;
   }
 
   _validateNumber() {
     // Checking if the number contains strings in it
     const containsLetters = /[a-zA-Z]/.test(this.number);
-
-    if (containsLetters) {
-      // this._allErrorMessage(1);
-      // this._resetCard();
-      return false; // Validation failed
-    } else {
-      // this._updateCard();
-      // this._removeErrorMessage(1);
-      return true; // Validation passed
-    }
+    containsLetters ? false : true;
   }
 
   _validateMonth(monthInput) {
     // Checking if the month input is empty
-    if (monthInput.trim() === '') {
-      // this._allErrorMessage(2);
-      // this._resetCard();
-      return false; // Validation failed
-    } else {
-      // this._updateCard();
-      // this._removeErrorMessage(2);
-      return true; // Validation passed
-    }
+    monthInput.trim() === '' ? false : true;
   }
 
   _validateYear() {}
