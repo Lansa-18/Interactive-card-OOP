@@ -163,6 +163,9 @@ class Card {
     inputCardholder.addEventListener('input', () => {
       this._updateNameRealTime();
     });
+    inputCardNumber.addEventListener('input', () => {
+      this._updateNumberRealTime();
+    });
   }
 
   _showthankYou() {
@@ -182,6 +185,15 @@ class Card {
       visualCardName.textContent = inputCardholder.value;
     }
   }
+
+  _updateNumberRealTime() {
+    if (inputCardNumber.value === '') {
+      visualCardNumber.textContent = cardNumberDetails;
+    } else {
+      visualCardNumber.textContent = inputCardNumber.value;
+    }
+  }
+
 
   // Method for validating the form
   _validateForm() {
