@@ -141,8 +141,8 @@ class Card {
   }
 
   _checkYear(inputYear) {
-    if (inputYear.length > 4) {
-      this.year = inputYear.slice(0, 4);
+    if (inputYear.length > 2) {
+      this.year = inputYear.slice(0, 2);
       inputCardYear.value = this.year;
     }
   }
@@ -234,6 +234,7 @@ class Card {
   _validateMonth(monthInput) {
     // Checking if the month input is empty
     return monthInput.trim() === '' ? false : true;
+
   }
 
   _validateYear(yearInput) {
