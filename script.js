@@ -14,6 +14,8 @@ const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('#error-hidden');
 const thankYouMsg = document.querySelector('.thank-you');
+const formInputs = document.querySelector('.white__right');
+const thankYouBtn = document.querySelector('.thank-you-button');
 
 // Creating the Card class
 
@@ -34,6 +36,10 @@ class Card {
     visualCardCvc.textContent = '000';
     visualCardExpDate.textContent = '00/00';
     visualCardNumber.textContent = '0000 0000 0000 0000';
+  }
+
+  _resetInputFields() {
+    
   }
 
   _form(e) {
@@ -69,8 +75,6 @@ class Card {
       errorIndices.push(4);
     }
 
-
-
     if (isValid) {
       this._updateCard();
       this._removeErrorMessage(errorIndices);
@@ -78,6 +82,8 @@ class Card {
       this._allErrorMessage(errorIndices);
       this._resetCard();
     }
+
+    this._showthankYou();
   }
 
   attachingEvent1() {
@@ -141,6 +147,22 @@ class Card {
     }
   }
 
+  attachingEvent5() {
+    thankYouBtn.addEventListener('click', () => {
+      this._showForm();
+    });
+  }
+
+  _showthankYou() {
+    formInputs.classList.add('special-hidden');
+    thankYouMsg.classList.remove('special-hidden');
+  }
+
+  _showForm() {
+    formInputs.classList.remove('special-hidden');
+    thankYouMsg.classList.add('special-hidden');
+  }
+
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -175,8 +197,6 @@ class Card {
     return cvcInput.trim() === '' ? false : true;
   }
 
-
-
   _allErrorMessage(indices) {
     allErrorSpan.forEach((err, i, arr) => {
       if (indices.includes(i)) {
@@ -204,10 +224,6 @@ class Card {
     visualCardNumber.textContent = `${inputCardNumber.value}`;
     this._splitYear();
   }
-
-  _thankYou() {
-
-  }
 }
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -224,6 +240,7 @@ document.addEventListener('DOMContentLoaded', event => {
   userCard.attachingEvent2();
   userCard.attachingEvent3();
   userCard.attachingEvent4();
+  userCard.attachingEvent5();
 });
 
 // The form event listener
