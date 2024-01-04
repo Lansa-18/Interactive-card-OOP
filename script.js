@@ -44,7 +44,6 @@ class Card {
     this._validateName();
   }
 
-
   attachingEvent1() {
     inputCardNumber.addEventListener('input', () => {
       this._formatCardNumber(inputCardNumber.value);
@@ -94,11 +93,11 @@ class Card {
     if (containNumbers) {
       this._allErrorMessage(0);
       this._resetCard();
-      return false // Validation failed
+      return false; // Validation failed
     } else {
       this._updateCard();
       this._removeErrorMessage(0);
-      return true // Validation passed
+      return true; // Validation passed
     }
   }
 
@@ -109,36 +108,76 @@ class Card {
     if (containsLetters) {
       this._allErrorMessage(1);
       this._resetCard();
-      return false // Validation failed
+      return false; // Validation failed
     } else {
       this._updateCard();
       this._removeErrorMessage(1);
-      return true // Validation passed
+      return true; // Validation passed
     }
   }
-  
+
   _validateMonth(monthInput) {
     // Checking if the month input is empty
     if (monthInput.trim() === '') {
       this._allErrorMessage(2);
       this._resetCard();
+      return false; // Validation failed
     } else {
       this._updateCard();
       this._removeErrorMessage(2);
+      return true; // Validation passed
     }
   }
 
   _validateYear() {}
 
-  _allErrorMessage(index) {
-    allErrorSpan.forEach((err, i, arr) => {
-      arr[index].classList.remove('hidden');
+  // _validator(caseStudy, index){
+
+  // }
+
+  _allErrorMessage(indices) {
+    // allErrorSpan.forEach((err, i, arr) => {
+    //   arr[index].classList.remove('hidden');
+    // });
+
+    indices.forEach(index => {
+      switch (index) {
+        case 0:
+          allErrorSpan[0].classList.remove('hidden');
+          break;
+        case 1:
+          allErrorSpan[1].classList.remove('hidden');
+          break;
+        case 2:
+          allErrorSpan[2].classList.remove('hidden');
+          break;
+        default:
+          console.log('No error message');
+          break;
+      }
     });
   }
 
   _removeErrorMessage(index) {
-    allErrorSpan.forEach((err, i, arr) => {
-      arr[index].classList.add('hidden');
+    // allErrorSpan.forEach((err, i, arr) => {
+    //   arr[index].classList.add('hidden');
+    // });
+
+    indices.forEach(index => {
+      switch (index) {
+        case 0:
+          allErrorSpan[0].classList.remove('hidden');
+          break;
+        case 1:
+          allErrorSpan[1].classList.remove('hidden');
+          break;
+        case 2:
+          allErrorSpan[2].classList.remove('hidden');
+          break;
+        default:
+          console.log('No error message');
+          break;
+      }
     });
   }
 
