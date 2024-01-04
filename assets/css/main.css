@@ -53,6 +53,10 @@ body {
   }
 }
 
+.special-hidden {
+  display: none;
+}
+
 header {
   width: 85%;
   margin: auto;
