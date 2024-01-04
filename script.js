@@ -11,6 +11,8 @@ const atmForm = document.querySelector('.card-form');
 const visualCardName = document.querySelector('.visual-card-name');
 const visualCardNumber = document.querySelector('.visual-card-number');
 const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
+const visualCardMonth = document.querySelector('.visual-card-month');
+const visualCardYear = document.querySelector('.visual-card-year');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
 const allErrorSpan = document.querySelectorAll('#error-hidden');
 const thankYouMsg = document.querySelector('.thank-you');
@@ -19,6 +21,8 @@ const thankYouBtn = document.querySelector('.thank-you-button');
 const cardNameDetails = visualCardName.textContent;
 const cardNumberDetails = visualCardNumber.textContent;
 const cardCvcDetails = visualCardCvc.textContent;
+const cardMonthDetails = visualCardMonth.textContent;
+const cardYearDetails = visualCardYear.textContent;
 
 
 // Creating the Card class
@@ -166,6 +170,23 @@ class Card {
     inputCardNumber.addEventListener('input', () => {
       this._updateNumberRealTime();
     });
+    inputCardMonth.addEventListener('input', () => {
+      this._updateMonthRealTime();
+    });
+    inputCardYear.addEventListener('input', () => {
+      this._updateYearRealTime();
+    });
+    inputCardCvc.addEventListener('input', () => {
+      this._updateCvcRealTime();
+    });
+  }
+
+  _updater(input, visual, card){
+    if (input.value === '') {
+      visual.textContent = card;
+    } else {
+      visual.textContent = input.value;
+    }
   }
 
   _showthankYou() {
@@ -179,19 +200,23 @@ class Card {
   }
 
   _updateNameRealTime() {
-    if (inputCardholder.value === '') {
-      visualCardName.textContent = cardNameDetails;
-    } else {
-      visualCardName.textContent = inputCardholder.value;
-    }
+    this._updater(inputCardholder, visualCardName, cardNameDetails);
   }
 
   _updateNumberRealTime() {
-    if (inputCardNumber.value === '') {
-      visualCardNumber.textContent = cardNumberDetails;
-    } else {
-      visualCardNumber.textContent = inputCardNumber.value;
-    }
+    this._updater(inputCardNumber, visualCardNumber, cardNumberDetails);
+  }
+
+  _updateMonthRealTime() {
+    this._updater(inputCardMonth, visualCardMonth, cardMonthDetails);
+  }
+
+  _updateYearRealTime() {
+    this._updater(inputCardYear, visualCardYear, cardYearDetails);
+  }
+
+  _updateCvcRealTime() {
+    this._updater(inputCardCvc, visualCardCvc, cardCvcDetails);
   }
 
 
