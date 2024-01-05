@@ -138,16 +138,32 @@ header {
 .cardholder__expiry--flex {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: space-between;
+  border: 1px solid orangered;
 }
 .cardholder__expiry--flex .cardholder__content--date {
-  width: 45%;
+  width: 35%;
+  flex-basis: 45%;
+  border: 1px solid brown;
+}
+@media (max-width: 74.999em) {
+  .cardholder__expiry--flex .cardholder__content--date {
+    border: 1px solid black;
+    width: 35%;
+  }
 }
 .cardholder__expiry--flex .card__date--flex {
   margin-top: 0.7rem;
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  border: 1px solid green;
+}
+@media (max-width: 74.999em) {
+  .cardholder__expiry--flex .card__date--flex {
+    border: 1px solid blue;
+  }
 }
 .cardholder__expiry--flex .card__date--flex .card__date {
   display: flex;
@@ -163,6 +179,12 @@ header {
 
 .cardholder__content--cvc {
   flex-basis: 55%;
+  border: 1px solid blue;
+}
+@media (max-width: 74.999em) {
+  .cardholder__content--cvc {
+    border: 1px solid red;
+  }
 }
 .cardholder__content--cvc-section {
   display: flex;
