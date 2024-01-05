@@ -29,7 +29,8 @@ html {
 body {
   font-family: "Space Grotesk", sans-serif;
   max-width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden;
 }
 
 .hidden {
@@ -39,15 +40,13 @@ body {
 .mobile {
   display: none;
 }
-@media (max-width: 39.999em) {
+@media (max-width: 47.999em) {
   .mobile {
     display: block;
-    width: 100%;
-    position: relative;
   }
 }
 
-@media (max-width: 39.999em) {
+@media (max-width: 47.999em) {
   .desktop {
     display: none;
   }
@@ -281,6 +280,7 @@ header {
 }
 
 .thank-you-div {
+  height: 100vh;
   position: absolute;
   top: 50%;
   left: 70%;

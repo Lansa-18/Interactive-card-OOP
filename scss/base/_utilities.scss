@@ -6,15 +6,13 @@
 
 .mobile {
   display: none;
-  @include mq(640px) {
+  @include mq(land-phone) {
     display: block;
-    width: 100%;
-    position: relative;
   }
 }
 
 .desktop {
-  @include mq(640px) {
+  @include mq(land-phone) {
     display: none;
   }
 }
