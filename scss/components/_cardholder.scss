@@ -59,16 +59,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid orangered;
-  // gap: 0.3rem;
 
   .cardholder__content--date {
     width: 35%;
     flex-basis: 45%;
-    border: 1px solid brown;
 
     @include mq(tab-land) {
-      border: 1px solid black;
       width: 35%;
     }
   }
@@ -77,14 +73,12 @@
     margin-top: 0.7rem;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    border: 1px solid green;
 
     @include mq(tab-land) {
       border: 1px solid blue;
-      // width: 100%;
+
     }
 
     .card__date {
@@ -105,7 +99,6 @@
 
 .cardholder__content--cvc {
   flex-basis: 55%;
-  border: 1px solid blue;
 
   @include mq(tab-land) {
     border: 1px solid red;

@@ -139,16 +139,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid orangered;
 }
 .cardholder__expiry--flex .cardholder__content--date {
   width: 35%;
   flex-basis: 45%;
-  border: 1px solid brown;
 }
 @media (max-width: 74.999em) {
   .cardholder__expiry--flex .cardholder__content--date {
-    border: 1px solid black;
     width: 35%;
   }
 }
@@ -158,7 +155,6 @@ header {
   align-items: center;
   gap: 1rem;
   width: 100%;
-  border: 1px solid green;
 }
 @media (max-width: 74.999em) {
   .cardholder__expiry--flex .card__date--flex {
@@ -179,7 +175,6 @@ header {
 
 .cardholder__content--cvc {
   flex-basis: 55%;
-  border: 1px solid blue;
 }
 @media (max-width: 74.999em) {
   .cardholder__content--cvc {
