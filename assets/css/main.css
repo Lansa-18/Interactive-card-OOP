@@ -156,7 +156,7 @@ header {
   margin-top: 0.7rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
   width: 100%;
   border: 1px solid green;
 }
@@ -171,10 +171,10 @@ header {
   gap: 0.7rem;
 }
 .cardholder__expiry--flex .card__date--flex .card__date1 {
-  width: 40%;
+  width: 42%;
 }
 .cardholder__expiry--flex .card__date--flex .card__date2 {
-  width: 45%;
+  width: 42%;
 }
 
 .cardholder__content--cvc {
