@@ -181,6 +181,12 @@ header {
     border: 1px solid red;
   }
 }
+@media (max-width: 61.999em) {
+  .cardholder__content--cvc {
+    border: 1px solid blue;
+    width: 40%;
+  }
+}
 .cardholder__content--cvc-section {
   display: flex;
   flex-direction: column;

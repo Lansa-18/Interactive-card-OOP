@@ -104,6 +104,11 @@
     border: 1px solid red;
   }
 
+  @include mq(tab-port){
+    border: 1px solid blue;
+    width: 40%
+  }
+
   &-section {
     @include flex-vertical;
     margin-top: 0.7rem;
