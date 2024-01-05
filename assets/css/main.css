@@ -173,7 +173,6 @@ header {
 }
 @media (max-width: 61.999em) {
   .cardholder__content--cvc {
-    border: 1px solid blue;
     width: 40%;
   }
 }

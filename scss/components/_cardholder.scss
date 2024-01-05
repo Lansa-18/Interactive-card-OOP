@@ -95,9 +95,8 @@
 
 .cardholder__content--cvc {
   flex-basis: 55%;
-  
+
   @include mq(tab-port){
-    border: 1px solid blue;
     width: 40%
   }
 
