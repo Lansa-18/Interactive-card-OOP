@@ -5,6 +5,10 @@
   height: 100%;
   position: relative;
 
+  @include mq(land-phone) {
+    flex-direction: column;
+  }
+
   .gradient__left {
     flex-basis: 30%;
     // border: 1px solid red;

@@ -4,19 +4,24 @@
   visibility: hidden;
 }
 
-.mobile {
-  display: none;
-  @include mq(land-phone) {
-    display: block;
-  }
-}
+// .mobile {
+//   display: none;
+//   @include mq(land-phone) {
+//     display: block;
+//   }
+// }
 
-.desktop {
-  @include mq(land-phone) {
-    display: none;
-  }
-}
+// .desktop {
+//   @include mq(land-phone) {
+//     display: none;
+//   }
+// }
 
 .special-hidden{
   display: none;
+}
+
+.active{
+  display: none;
+  
 }
