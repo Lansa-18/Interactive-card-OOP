@@ -14,7 +14,7 @@ const visualCardExpDate = document.querySelector('.visual-card-expiry-date');
 const visualCardMonth = document.querySelector('.visual-card-month');
 const visualCardYear = document.querySelector('.visual-card-year');
 const visualCardCvc = document.querySelector('.atm__card--cvc');
-const allErrorSpan = document.querySelectorAll('#error-hidden');
+const allErrorSpan = document.querySelectorAll('.special-error');
 const thankYouMsg = document.querySelector('.thank-you');
 const formInputs = document.querySelector('.white__right');
 const thankYouBtn = document.querySelector('.thank-you-button');
@@ -90,7 +90,8 @@ class Card {
       this._allErrorMessage(errorIndices);
       this._resetCard();
     }
-
+    
+    // this._invalidMonth(inputCardMonth);
     // this._showthankYou();
   }
 
@@ -238,7 +239,8 @@ class Card {
 
   _invalidMonth(monthInput) {
     if (monthInput.value < 1 || monthInput.value > 12) {
-      alert('Invalid month');
+      allErrorSpan[2].classList.remove('hidden');
+      allErrorSpan[2].textContent = 'Invalid Month';
     }
   }
 
