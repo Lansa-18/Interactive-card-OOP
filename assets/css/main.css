@@ -235,7 +235,6 @@ header {
 @media (max-width: 74.999em) {
   .atm__card--front-content-middle p {
     font-size: 2rem;
-    border: 1px solid red;
   }
 }
 .atm__card--front-content-bottom {
