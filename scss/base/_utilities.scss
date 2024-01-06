@@ -21,6 +21,10 @@
   display: none;
 }
 
-.active{
+.not-active{
   display: none;
+}
+
+.active{
+  display: block;
 }

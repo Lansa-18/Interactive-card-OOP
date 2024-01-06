@@ -41,8 +41,12 @@ body {
   display: none;
 }
 
-.active {
+.not-active {
   display: none;
+}
+
+.active {
+  display: block;
 }
 
 header {
@@ -254,12 +258,6 @@ header {
   width: 100%;
   height: 100%;
   position: relative;
-}
-@media (max-width: 47.999em) {
-  .body__flex {
-    display: none;
-    flex-direction: column;
-  }
 }
 .body__flex .gradient__left {
   flex-basis: 30%;
