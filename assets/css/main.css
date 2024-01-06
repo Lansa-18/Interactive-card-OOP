@@ -257,6 +257,7 @@ header {
 }
 @media (max-width: 47.999em) {
   .body__flex {
+    display: none;
     flex-direction: column;
   }
 }

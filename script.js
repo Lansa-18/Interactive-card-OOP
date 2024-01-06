@@ -127,11 +127,11 @@ class Card {
     inputCardCvc.addEventListener('input', () => {
       this._checkCvc(inputCardCvc.value);
     });
-    thankYouBtn.addEventListener('click', () => {
-      this._showForm();
-      this._resetCard();
-      this._resetInputFields();
-    });
+    // thankYouBtn.addEventListener('click', () => {
+    //   this._showForm();
+    //   this._resetCard();
+    //   this._resetInputFields();
+    // });
   }
 
   _checkMonth(inputMonth) {
