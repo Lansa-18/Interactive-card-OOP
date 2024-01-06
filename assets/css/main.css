@@ -44,9 +44,19 @@ body {
 .not-active {
   display: none;
 }
+@media (max-width: 47.999em) {
+  .not-active {
+    display: block;
+  }
+}
 
 .active {
   display: block;
+}
+@media (max-width: 47.999em) {
+  .active {
+    display: none;
+  }
 }
 
 header {

@@ -23,8 +23,16 @@
 
 .not-active{
   display: none;
+
+  @include mq(land-phone){
+    display: block;
+  }
 }
 
 .active{
   display: block;
+
+  @include mq(land-phone){
+    display: none;
+  }
 }
