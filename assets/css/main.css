@@ -43,7 +43,7 @@ body {
 .not-active {
   display: none;
 }
-@media (max-width: 47.999em) {
+@media (max-width: 39.999em) {
   .not-active {
     display: block;
   }
@@ -52,7 +52,7 @@ body {
 .active {
   display: block;
 }
-@media (max-width: 47.999em) {
+@media (max-width: 39.999em) {
   .active {
     display: none;
   }
@@ -97,10 +97,11 @@ header {
   transform: translate(-50%, -50%);
   width: 45%;
 }
-@media (max-width: 47.999em) {
+@media (max-width: 39.999em) {
   .cardholder__container {
     transform: translate(-50%, 0);
     width: 90%;
+    top: 0;
   }
 }
 .cardholder__container label {
@@ -200,6 +201,22 @@ header {
   top: 8rem;
   left: 8rem;
 }
+@media (max-width: 47.999em) {
+  .atm__card--front {
+    width: 30rem;
+  }
+}
+@media (max-width: 39.999em) {
+  .atm__card--front {
+    width: 27.5rem;
+    height: 15.5rem;
+  }
+}
+@media (max-width: 47.999em) {
+  .atm__card--front {
+    left: 4rem;
+  }
+}
 .atm__card--front-content {
   display: flex;
   flex-direction: column;
@@ -260,6 +277,28 @@ header {
   top: 27rem;
   left: 14rem;
 }
+@media (max-width: 47.999em) {
+  .atm__card--back {
+    width: 30rem;
+  }
+}
+@media (max-width: 39.999em) {
+  .atm__card--back {
+    width: 27.5rem;
+    height: 15.5rem;
+  }
+}
+@media (max-width: 47.999em) {
+  .atm__card--back {
+    left: 7rem;
+  }
+}
+@media (max-width: 39.999em) {
+  .atm__card--back {
+    top: 10rem;
+    left: 20rem;
+  }
+}
 .atm__card--back .atm__card--cvc {
   color: hsl(270, 3%, 87%);
   font-size: 1.4rem;
@@ -271,16 +310,21 @@ header {
 .body__flex {
   display: flex;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   position: relative;
 }
-@media (max-width: 47.999em) {
+@media (max-width: 39.999em) {
   .body__flex {
     flex-direction: column;
   }
 }
 .body__flex .gradient__left {
   flex-basis: 30%;
+}
+@media (max-width: 39.999em) {
+  .body__flex .gradient__left {
+    border: 1px solid red;
+  }
 }
 .body__flex .gradient__left img {
   width: 100%;
@@ -290,9 +334,9 @@ header {
   flex-basis: 70%;
   position: relative;
 }
-@media (max-width: 47.999em) {
+@media (max-width: 39.999em) {
   .body__flex .white__right {
-    border: 1px solid red;
+    border: 1px solid blue;
   }
 }
 

@@ -57,6 +57,15 @@ $breakpoints: (
   background-size: contain;
   width: 31.5rem;
   height: 17.5rem;
+
+  @include mq(land-phone){
+    width: 30rem;
+  }
+
+  @include mq(640px){
+    width: 27.5rem;
+    height: 15.5rem;
+  }
 }
 
 @mixin btn-basic {

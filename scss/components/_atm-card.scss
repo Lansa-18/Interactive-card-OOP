@@ -7,6 +7,10 @@
   top: 8rem;
   left: 8rem;
 
+  @include mq(land-phone){
+    left: 4rem;
+  }
+
   &-content {
     @include flex-vertical;
     width: 90%;
@@ -65,6 +69,15 @@
   position: absolute;
   top: 27rem;
   left: 14rem;
+
+  @include mq(land-phone){
+    left: 7rem;
+  }
+
+  @include mq(640px){
+    top: 10rem;
+    left: 20rem;
+  }
 
   .atm__card--cvc{
     // border: 1px solid red;
