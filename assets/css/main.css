@@ -209,7 +209,7 @@ header {
 @media (max-width: 39.999em) {
   .atm__card--front {
     width: 27.5rem;
-    height: 15.5rem;
+    height: 16.5rem;
   }
 }
 @media (max-width: 47.999em) {
@@ -285,7 +285,7 @@ header {
 @media (max-width: 39.999em) {
   .atm__card--back {
     width: 27.5rem;
-    height: 15.5rem;
+    height: 16.5rem;
   }
 }
 @media (max-width: 47.999em) {
@@ -295,8 +295,8 @@ header {
 }
 @media (max-width: 39.999em) {
   .atm__card--back {
-    top: 10rem;
-    left: 20rem;
+    top: 6%;
+    left: 50%;
   }
 }
 .atm__card--back .atm__card--cvc {
@@ -323,6 +323,7 @@ header {
 }
 @media (max-width: 39.999em) {
   .body__flex .gradient__left {
+    height: 60%;
     border: 1px solid red;
   }
 }
@@ -337,6 +338,7 @@ header {
 @media (max-width: 39.999em) {
   .body__flex .white__right {
     border: 1px solid blue;
+    margin-top: 6rem;
   }
 }
 
