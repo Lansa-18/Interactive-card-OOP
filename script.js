@@ -24,7 +24,6 @@ const cardCvcDetails = visualCardCvc.textContent;
 const cardMonthDetails = visualCardMonth.textContent;
 const cardYearDetails = visualCardYear.textContent;
 
-
 // Creating the Card class
 
 class Card {
@@ -47,7 +46,12 @@ class Card {
   }
 
   _resetInputFields() {
-    inputCardholder.value = inputCardNumber.value = inputCardMonth.value = inputCardYear.value = inputCardCvc.value = '';
+    inputCardholder.value =
+      inputCardNumber.value =
+      inputCardMonth.value =
+      inputCardYear.value =
+      inputCardCvc.value =
+        '';
   }
 
   _form(e) {
@@ -71,6 +75,7 @@ class Card {
     if (!this._validateMonth(inputCardMonth.value)) {
       isValid = false;
       errorIndices.push(2);
+      // this._noStrings(2);
     }
 
     if (!this._validateYear(inputCardYear.value)) {
@@ -90,7 +95,7 @@ class Card {
       this._allErrorMessage(errorIndices);
       this._resetCard();
     }
-    
+
     // this._invalidMonth(inputCardMonth);
     // this._showthankYou();
   }
@@ -173,18 +178,17 @@ class Card {
     });
   }
 
-  
   _showthankYou() {
     formInputs.classList.add('special-hidden');
     thankYouMsg.classList.remove('special-hidden');
   }
-  
+
   _showForm() {
     formInputs.classList.remove('special-hidden');
     thankYouMsg.classList.add('special-hidden');
   }
 
-  _updater(input, visual, card){
+  _updater(input, visual, card) {
     if (input.value === '') {
       visual.textContent = card;
     } else {
@@ -212,7 +216,6 @@ class Card {
     this._updater(inputCardCvc, visualCardCvc, cardCvcDetails);
   }
 
-
   // Method for validating the form
   _validateForm() {
     if (!this.name || !this.surname) {
@@ -233,6 +236,11 @@ class Card {
   }
 
   _validateMonth(monthInput) {
+    // Check if the month contains letters
+    const containsLetters = /[a-zA-Z]/.test(month);
+    if (containsLetters) {
+      return false; // Validation failed
+    }
     // Checking if the month input is empty
     return monthInput.trim() === '' ? false : true;
   }
@@ -244,12 +252,31 @@ class Card {
     }
   }
 
+  // _noStrings(index){
+  //   if(!this._validateNumber()){
+  //     allErrorSpan.forEach((err, i, arr) => {
+  //       arr[index].classList.remove('hidden');
+  //       arr[index].textContent = "Numbers Only";
+  //     })
+  //   }
+  // }
+
   _validateYear(yearInput) {
+    // Check if the month contains letters
+    const containsLetters = /[a-zA-Z]/.test(month);
+    if (containsLetters) {
+      return false; // Validation failed
+    }
     // Checking if the year input is empty
     return yearInput.trim() === '' ? false : true;
   }
 
   _validateCvc(cvcInput) {
+    // Check if the month contains letters
+    const containsLetters = /[a-zA-Z]/.test(month);
+    if (containsLetters) {
+      return false; // Validation failed
+    }
     // Checking if the cvc input is empty
     return cvcInput.trim() === '' ? false : true;
   }

@@ -53,11 +53,12 @@
                 <div class="card__date--flex">
                   <div class="card__date card__date1">
                     <input
-                      type="number"
+                      type="text"
                       id="card-date"
                       class="card-month"
                       placeholder="MM"
-                      min="2"
+                      minlength="2"
+                      maxlength="2"
                     />
                     <span class="hidden special-error"
                       >Can't be blank</span
@@ -65,11 +66,12 @@
                   </div>
                   <div class="card__date card__date2">
                     <input
-                      type="number"
+                      type="text"
                       id="card-date"
                       class="card-year"
                       placeholder="YY"
-                      min="2"
+                      minlength="2"
+                      maxlength="2"
                     />
                     <span class="hidden special-error"
                       >Can't be blank</span
@@ -82,11 +84,12 @@
                 <label for="card-cvc">CVC</label>
                 <section class="cardholder__content--cvc-section">
                   <input
-                    type="number"
+                    type="text"
                     class="card-cvc"
                     id="card-cvc"
                     placeholder="e.g. 123"
-                    min="3"
+                    minlength="3"
+                    maxlength="3"
                   />
                   <span class="hidden special-error"
                     >Can't be blank</span
