@@ -97,6 +97,12 @@ header {
   transform: translate(-50%, -50%);
   width: 45%;
 }
+@media (max-width: 47.999em) {
+  .cardholder__container {
+    transform: translate(-50%, 0);
+    width: 90%;
+  }
+}
 .cardholder__container label {
   font-size: 0.8rem;
   font-weight: 700;
@@ -283,6 +289,11 @@ header {
 .body__flex .white__right {
   flex-basis: 70%;
   position: relative;
+}
+@media (max-width: 47.999em) {
+  .body__flex .white__right {
+    border: 1px solid red;
+  }
 }
 
 .thank-you-div {

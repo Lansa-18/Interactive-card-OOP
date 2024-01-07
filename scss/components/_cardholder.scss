@@ -4,6 +4,11 @@
   @include center-vertical-horizontal;
   width: 45%;
 
+  @include mq(land-phone){
+    transform: translate(-50%,0);
+    width: 90%;
+  }
+
 
   label {
     font-size: 0.8rem;

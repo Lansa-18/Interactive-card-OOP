@@ -20,7 +20,7 @@
       height: 100%;
 
       @include mq(land-phone) {
-        // width: 50%;
+        // width: 80%;
       }
     }
   }
@@ -28,5 +28,9 @@
   .white__right {
     flex-basis: 70%;
     position: relative;
+
+    @include mq(land-phone){
+      border: 1px solid red;
+    }
   }
 }
