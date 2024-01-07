@@ -30,6 +30,7 @@ body {
   font-family: "Space Grotesk", sans-serif;
   max-width: 100vw;
   max-height: 100vh;
+  position: relative;
 }
 
 .hidden {
@@ -227,7 +228,7 @@ header {
 @media (max-width: 29.679em) {
   .atm__card--front {
     left: 9%;
-    top: 35%;
+    top: 18%;
   }
 }
 .atm__card--front-content {
