@@ -18,7 +18,8 @@
   }
 
   @include mq(475px){
-    
+    left: 9%;
+    top: 35%;
   }
 
   &-content {
@@ -94,7 +95,7 @@
   }
 
   @include mq(475px){
-    
+    left: 30%;
   }
 
   .atm__card--cvc{

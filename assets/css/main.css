@@ -224,6 +224,12 @@ header {
     z-index: 2;
   }
 }
+@media (max-width: 29.679em) {
+  .atm__card--front {
+    left: 9%;
+    top: 35%;
+  }
+}
 .atm__card--front-content {
   display: flex;
   flex-direction: column;
@@ -309,6 +315,11 @@ header {
   .atm__card--back {
     top: 6%;
     left: 45%;
+  }
+}
+@media (max-width: 29.679em) {
+  .atm__card--back {
+    left: 30%;
   }
 }
 .atm__card--back .atm__card--cvc {
