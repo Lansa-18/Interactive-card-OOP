@@ -217,12 +217,24 @@ header {
     left: 4rem;
   }
 }
+@media (max-width: 39.999em) {
+  .atm__card--front {
+    top: 22%;
+    left: 19%;
+    z-index: 2;
+  }
+}
 .atm__card--front-content {
   display: flex;
   flex-direction: column;
   width: 90%;
   margin: auto;
   padding: 2rem 0;
+}
+@media (max-width: 39.999em) {
+  .atm__card--front-content {
+    padding: 1rem 0;
+  }
 }
 .atm__card--front-content-top {
   display: flex;
@@ -296,7 +308,7 @@ header {
 @media (max-width: 39.999em) {
   .atm__card--back {
     top: 6%;
-    left: 50%;
+    left: 45%;
   }
 }
 .atm__card--back .atm__card--cvc {
@@ -324,7 +336,6 @@ header {
 @media (max-width: 39.999em) {
   .body__flex .gradient__left {
     height: 60%;
-    border: 1px solid red;
   }
 }
 .body__flex .gradient__left img {
@@ -337,7 +348,6 @@ header {
 }
 @media (max-width: 39.999em) {
   .body__flex .white__right {
-    border: 1px solid blue;
     margin-top: 6rem;
   }
 }

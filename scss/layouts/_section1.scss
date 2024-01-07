@@ -7,9 +7,6 @@
 
   @include mq(640px) {
     flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
-    // display: block;
   }
 
   .gradient__left {
@@ -17,7 +14,6 @@
 
     @include mq(640px) {
       height: 60%;
-      border: 1px solid red;
     }
 
     img {
@@ -35,8 +31,6 @@
     position: relative;
 
     @include mq(640px) {
-      border: 1px solid blue;
-
       margin-top: 6rem;
     }
   }

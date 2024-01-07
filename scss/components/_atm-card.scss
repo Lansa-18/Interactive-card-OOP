@@ -11,11 +11,21 @@
     left: 4rem;
   }
 
+  @include mq(640px){
+    top: 22%;
+    left: 19%;
+    z-index: 2;
+  }
+
   &-content {
     @include flex-vertical;
     width: 90%;
     margin: auto;
     padding: 2rem 0;
+
+    @include mq(640px){
+      padding: 1rem 0;
+    }
 
     &-top {
       @include dflexcomp;
@@ -76,7 +86,7 @@
 
   @include mq(640px){
     top: 6%;
-    left: 50%;
+    left: 45%;
   }
 
   .atm__card--cvc{
