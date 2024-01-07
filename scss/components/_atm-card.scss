@@ -17,6 +17,10 @@
     z-index: 2;
   }
 
+  @include mq(475px){
+    
+  }
+
   &-content {
     @include flex-vertical;
     width: 90%;
@@ -89,6 +93,10 @@
     left: 45%;
   }
 
+  @include mq(475px){
+    
+  }
+
   .atm__card--cvc{
     // border: 1px solid red;
     color: $light-g-violet;
@@ -96,5 +104,10 @@
     position: absolute;
     top: 7.59rem;
     left: 25rem;
+
+    @include mq(640px){
+      top: 39%;
+      left: 79%;
+    }
   }
 } 

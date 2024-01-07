@@ -318,6 +318,12 @@ header {
   top: 7.59rem;
   left: 25rem;
 }
+@media (max-width: 39.999em) {
+  .atm__card--back .atm__card--cvc {
+    top: 39%;
+    left: 79%;
+  }
+}
 
 .body__flex {
   display: flex;
