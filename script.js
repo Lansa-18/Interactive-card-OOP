@@ -57,7 +57,7 @@ class Card {
   _form(e) {
     e.preventDefault();
     allErrorSpan.forEach(err => err.classList.add('hidden'));
-    this._validateForm();
+    // this._validateForm();
 
     let isValid = true;
     let errorIndices = [];
@@ -172,7 +172,7 @@ class Card {
     });
   }
 
-  attachingEvent4(){
+  attachingEvent4() {
     thankYouBtn.addEventListener('click', () => {
       this._showForm();
       this._resetCard();
@@ -218,17 +218,23 @@ class Card {
     this._updater(inputCardCvc, visualCardCvc, cardCvcDetails);
   }
 
-  // Method for validating the form
-  _validateForm() {
-    if (!this.name.trim() || !this.surname.trim()) {
-      alert('Please enter your full name');
-    }
-  }
-
   _validateName() {
-    // testing if both name and surname contain digits
+    // Check if name or surname is empty
+    if (!this.name || !this.surname) {
+      allErrorSpan[0].classList.remove('hidden');
+      allErrorSpan[0].textContent = 'Enter your Full Name';
+      return false; // Validation failed
+    }
+
+    // Check if name or surname contains digits
     const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
-    return containNumbers ? false : true;
+    if (containNumbers) {
+      allErrorSpan[0].classList.remove('hidden');
+      allErrorSpan[0].textContent = 'Wrong Format, text only';
+      return false; // Validation failed
+    }
+
+    return true; // Validation passed
   }
 
   _validateNumber() {
@@ -238,12 +244,12 @@ class Card {
   }
 
   _validateMonth(monthInput) {
-  // Check if the month contains letters or is less than 1 or greater than 12
-  const containsLetters = /[a-zA-Z]/.test(monthInput);
-  const isOutOfRange = parseInt(monthInput) < 1 || parseInt(monthInput) > 12;
-  if (containsLetters || isOutOfRange) {
-    return false; // Validation failed
-  }
+    // Check if the month contains letters or is less than 1 or greater than 12
+    const containsLetters = /[a-zA-Z]/.test(monthInput);
+    const isOutOfRange = parseInt(monthInput) < 1 || parseInt(monthInput) > 12;
+    if (containsLetters || isOutOfRange) {
+      return false; // Validation failed
+    }
 
     return monthInput.trim() === '' ? false : true;
   }
@@ -282,9 +288,11 @@ class Card {
         case 2:
           // Handle month error
           if (/[a-zA-Z]/.test(inputCardMonth.value)) {
-            allErrorSpan[index].textContent =
-              'Numbers Only!';
-          } else if (parseInt(inputCardMonth.value) < 1 || parseInt(inputCardMonth.value) > 12) {
+            allErrorSpan[index].textContent = 'Numbers Only!';
+          } else if (
+            parseInt(inputCardMonth.value) < 1 ||
+            parseInt(inputCardMonth.value) > 12
+          ) {
             allErrorSpan[index].textContent = 'Invalid Month!';
           }
           break;
@@ -292,8 +300,11 @@ class Card {
           // Handle year error
           if (/[a-zA-Z]/.test(inputCardYear.value)) {
             allErrorSpan[index].textContent = 'Numbers Only!';
-          } else if (parseInt((inputCardYear.value)) < 24 || parseInt(inputCardYear.value) > 34){
-            allErrorSpan[index].textContent = 'Invalid Year!'
+          } else if (
+            parseInt(inputCardYear.value) < 24 ||
+            parseInt(inputCardYear.value) > 34
+          ) {
+            allErrorSpan[index].textContent = 'Invalid Year!';
           }
           break;
         case 4:
@@ -322,8 +333,6 @@ class Card {
     visualCardCvc.textContent = `${this.#cvc}`;
     visualCardNumber.textContent = `${inputCardNumber.value}`;
   }
-
-  
 }
 
 document.addEventListener('DOMContentLoaded', event => {
