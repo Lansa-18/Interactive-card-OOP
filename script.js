@@ -227,7 +227,7 @@ class Card {
     }
 
     // Check if name or surname contains digits
-    const containNumbers = /\d|\W/.test(`${this.name} ${this.surname}`);
+    const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
     if (containNumbers) {
       allErrorSpan[0].classList.remove('hidden');
       allErrorSpan[0].textContent = 'Wrong Format, text only';
