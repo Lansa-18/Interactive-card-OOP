@@ -237,7 +237,7 @@ class Card {
 
   _validateMonth(monthInput) {
     // Check if the month contains letters
-    const containsLetters = /[a-zA-Z]/.test(month);
+    const containsLetters = /[a-zA-Z]/.test(monthInput);
     if (containsLetters) {
       return false; // Validation failed
     }
@@ -263,7 +263,7 @@ class Card {
 
   _validateYear(yearInput) {
     // Check if the month contains letters
-    const containsLetters = /[a-zA-Z]/.test(month);
+    const containsLetters = /[a-zA-Z]/.test(yearInput);
     if (containsLetters) {
       return false; // Validation failed
     }
@@ -273,7 +273,7 @@ class Card {
 
   _validateCvc(cvcInput) {
     // Check if the month contains letters
-    const containsLetters = /[a-zA-Z]/.test(month);
+    const containsLetters = /[a-zA-Z]/.test(cvcInput);
     if (containsLetters) {
       return false; // Validation failed
     }
@@ -281,10 +281,46 @@ class Card {
     return cvcInput.trim() === '' ? false : true;
   }
 
+  // _allErrorMessage(indices) {
+  //   // allErrorSpan.forEach((err, i, arr) => {
+  //   //   if (indices.includes(i)) {
+  //   //     err.classList.remove('hidden');
+  //   //   }
+  //   // });
+  // }
+
   _allErrorMessage(indices) {
-    allErrorSpan.forEach((err, i, arr) => {
-      if (indices.includes(i)) {
-        err.classList.remove('hidden');
+    indices.forEach(index => {
+      allErrorSpan[index].classList.remove('hidden');
+      switch (index) {
+        case 0:
+          // Handle name error
+          break;
+        case 1:
+          // Handle number error
+          break;
+        case 2:
+          // Handle month error
+          if (/[a-zA-Z]/.test(inputCardMonth.value)) {
+            allErrorSpan[index].textContent =
+              'Numbers Only!';
+          }
+          break;
+        case 3:
+          // Handle year error
+          if (/[a-zA-Z]/.test(inputCardYear.value)) {
+            allErrorSpan[index].textContent = 'Numbers Only!';
+          }
+          break;
+        case 4:
+          // Handle cvc error
+          if (/[a-zA-Z]/.test(inputCardCvc.value)) {
+            allErrorSpan[index].textContent = 'Numbers Only!';
+          }
+          break;
+        default:
+          // Handle unexpected index values
+          break;
       }
     });
   }
