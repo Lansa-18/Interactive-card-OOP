@@ -245,7 +245,7 @@ class Card {
 
   _validateMonth(monthInput) {
     // Check if the month contains letters or is less than 1 or greater than 12
-    const containsLetters = /[a-zA-Z]/.test(monthInput);
+    const containsLetters = /[a-zA-Z\W]/.test(monthInput);
     const isOutOfRange = parseInt(monthInput) < 1 || parseInt(monthInput) > 12;
     if (containsLetters || isOutOfRange) {
       return false; // Validation failed
@@ -256,7 +256,7 @@ class Card {
 
   _validateYear(yearInput) {
     // Check if the year contains letters or is less than the current year
-    const containsLetters = /[a-zA-Z]/.test(yearInput);
+    const containsLetters = /[a-zA-Z\W]/.test(yearInput);
     const isOutOfRange = parseInt(yearInput) < 24 || parseInt(yearInput) > 34;
     if (containsLetters || isOutOfRange) {
       return false; // Validation failed
