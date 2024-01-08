@@ -75,7 +75,6 @@ class Card {
     if (!this._validateMonth(inputCardMonth.value)) {
       isValid = false;
       errorIndices.push(2);
-      // this._invalidMonth(inputCardMonth);
     }
 
     if (!this._validateYear(inputCardYear.value)) {
@@ -94,8 +93,6 @@ class Card {
       this._removeErrorMessage(errorIndices);
     } else {
       this._allErrorMessage(errorIndices);
-      // this._invalidMonth(inputCardMonth.value)
-      // this._resetCard();
     }
   }
 
