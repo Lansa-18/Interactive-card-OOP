@@ -75,6 +75,7 @@ class Card {
     if (!this._validateMonth(inputCardMonth.value)) {
       isValid = false;
       errorIndices.push(2);
+      // this._invalidMonth(inputCardMonth);
     }
 
     if (!this._validateYear(inputCardYear.value)) {
@@ -93,6 +94,7 @@ class Card {
       this._removeErrorMessage(errorIndices);
     } else {
       this._allErrorMessage(errorIndices);
+      // this._invalidMonth(inputCardMonth.value)
       // this._resetCard();
     }
   }
@@ -236,26 +238,21 @@ class Card {
   }
 
   _validateMonth(monthInput) {
-    // Check if the month contains letters
-    const containsLetters = /[a-zA-Z]/.test(monthInput);
-    if (containsLetters) {
-      return false; // Validation failed
-    }
-    // Checking if the month input is empty
+  // Check if the month contains letters or is less than 1 or greater than 12
+  const containsLetters = /[a-zA-Z]/.test(monthInput);
+  const isOutOfRange = parseInt(monthInput) < 1 || parseInt(monthInput) > 12;
+  if (containsLetters || isOutOfRange) {
+    return false; // Validation failed
+  }
+
     return monthInput.trim() === '' ? false : true;
   }
 
-  _invalidMonth(monthInput) {
-    if (monthInput.value < 1 || monthInput.value > 12) {
-      allErrorSpan[2].classList.remove('hidden');
-      allErrorSpan[2].textContent = 'Invalid Month';
-    }
-  }
-
   _validateYear(yearInput) {
-    // Check if the month contains letters
+    // Check if the year contains letters or is less than the current year
     const containsLetters = /[a-zA-Z]/.test(yearInput);
-    if (containsLetters) {
+    const isOutOfRange = parseInt(yearInput) < 24 || parseInt(yearInput) > 34;
+    if (containsLetters || isOutOfRange) {
       return false; // Validation failed
     }
     // Checking if the year input is empty
@@ -263,7 +260,7 @@ class Card {
   }
 
   _validateCvc(cvcInput) {
-    // Check if the month contains letters
+    // Check if the cvc contains letters
     const containsLetters = /[a-zA-Z]/.test(cvcInput);
     if (containsLetters) {
       return false; // Validation failed
@@ -287,12 +284,16 @@ class Card {
           if (/[a-zA-Z]/.test(inputCardMonth.value)) {
             allErrorSpan[index].textContent =
               'Numbers Only!';
+          } else if (parseInt(inputCardMonth.value) < 1 || parseInt(inputCardMonth.value) > 12) {
+            allErrorSpan[index].textContent = 'Invalid Month!';
           }
           break;
         case 3:
           // Handle year error
           if (/[a-zA-Z]/.test(inputCardYear.value)) {
             allErrorSpan[index].textContent = 'Numbers Only!';
+          } else if (parseInt((inputCardYear.value)) < 24 || parseInt(inputCardYear.value) > 34){
+            allErrorSpan[index].textContent = 'Invalid Year!'
           }
           break;
         case 4:
