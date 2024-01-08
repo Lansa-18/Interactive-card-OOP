@@ -75,7 +75,6 @@ class Card {
     if (!this._validateMonth(inputCardMonth.value)) {
       isValid = false;
       errorIndices.push(2);
-      // this._noStrings(2);
     }
 
     if (!this._validateYear(inputCardYear.value)) {
@@ -219,7 +218,7 @@ class Card {
 
   // Method for validating the form
   _validateForm() {
-    if (!this.name || !this.surname) {
+    if (!this.name.trim() || !this.surname.trim()) {
       alert('Please enter your full name');
     }
   }
