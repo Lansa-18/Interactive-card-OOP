@@ -227,7 +227,7 @@ class Card {
     }
 
     // Check if name or surname contains digits
-    const containNumbers = /\d/.test(`${this.name} ${this.surname}`);
+    const containNumbers = /\d|\W/.test(`${this.name} ${this.surname}`);
     if (containNumbers) {
       allErrorSpan[0].classList.remove('hidden');
       allErrorSpan[0].textContent = 'Wrong Format, text only';
@@ -267,7 +267,7 @@ class Card {
 
   _validateCvc(cvcInput) {
     // Check if the cvc contains letters
-    const containsLetters = /[a-zA-Z]/.test(cvcInput);
+    const containsLetters = /[a-zA-Z\W]/.test(cvcInput);
     if (containsLetters) {
       return false; // Validation failed
     }
