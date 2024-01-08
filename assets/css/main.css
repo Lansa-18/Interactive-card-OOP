@@ -383,6 +383,13 @@ header {
   gap: 1.2rem;
   width: 25%;
 }
+@media (max-width: 39.999em) {
+  .thank-you-div {
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%);
+  }
+}
 .thank-you-div img {
   width: 35%;
 }
