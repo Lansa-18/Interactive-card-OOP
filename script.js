@@ -90,14 +90,12 @@ class Card {
 
     if (isValid) {
       this._updateCard();
+      this._showthankYou();
       this._removeErrorMessage(errorIndices);
     } else {
       this._allErrorMessage(errorIndices);
-      this._resetCard();
+      // this._resetCard();
     }
-
-    // this._invalidMonth(inputCardMonth);
-    // this._showthankYou();
   }
 
   attachingEvent1() {
@@ -132,11 +130,6 @@ class Card {
     inputCardCvc.addEventListener('input', () => {
       this._checkCvc(inputCardCvc.value);
     });
-    // thankYouBtn.addEventListener('click', () => {
-    //   this._showForm();
-    //   this._resetCard();
-    //   this._resetInputFields();
-    // });
   }
 
   _checkMonth(inputMonth) {
@@ -175,6 +168,14 @@ class Card {
     });
     inputCardCvc.addEventListener('input', () => {
       this._updateCvcRealTime();
+    });
+  }
+
+  attachingEvent4(){
+    thankYouBtn.addEventListener('click', () => {
+      this._showForm();
+      this._resetCard();
+      this._resetInputFields();
     });
   }
 
@@ -252,15 +253,6 @@ class Card {
     }
   }
 
-  // _noStrings(index){
-  //   if(!this._validateNumber()){
-  //     allErrorSpan.forEach((err, i, arr) => {
-  //       arr[index].classList.remove('hidden');
-  //       arr[index].textContent = "Numbers Only";
-  //     })
-  //   }
-  // }
-
   _validateYear(yearInput) {
     // Check if the month contains letters
     const containsLetters = /[a-zA-Z]/.test(yearInput);
@@ -280,14 +272,6 @@ class Card {
     // Checking if the cvc input is empty
     return cvcInput.trim() === '' ? false : true;
   }
-
-  // _allErrorMessage(indices) {
-  //   // allErrorSpan.forEach((err, i, arr) => {
-  //   //   if (indices.includes(i)) {
-  //   //     err.classList.remove('hidden');
-  //   //   }
-  //   // });
-  // }
 
   _allErrorMessage(indices) {
     indices.forEach(index => {
@@ -333,16 +317,13 @@ class Card {
     });
   }
 
-  // _splitYear() {
-  //   const twoDigitYear = this.year.slice(2, 4);
-  //   visualCardExpDate.textContent = `${this.month}/${twoDigitYear}`;
-  // }
-
   _updateCard() {
     visualCardName.textContent = `${this.surname} ${this.name}`;
     visualCardCvc.textContent = `${this.#cvc}`;
     visualCardNumber.textContent = `${inputCardNumber.value}`;
   }
+
+  
 }
 
 document.addEventListener('DOMContentLoaded', event => {
@@ -358,6 +339,7 @@ document.addEventListener('DOMContentLoaded', event => {
   userCard.attachingEvent1();
   userCard.attachingEvent2();
   userCard.attachingEvent3();
+  userCard.attachingEvent4();
 });
 
 // The form event listener
