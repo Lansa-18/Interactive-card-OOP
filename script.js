@@ -239,7 +239,7 @@ class Card {
 
   _validateNumber() {
     // Checking if the number contains strings in it
-    const containsLetters = /[a-zA-Z\W]/.test(this.number);
+    const containsLetters = /[a-zA-Z]/.test(this.number);
     return containsLetters ? false : true;
   }
 
