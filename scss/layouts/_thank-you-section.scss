@@ -14,6 +14,7 @@
   width: 25%;
 
   @include mq(640px) {
+    top: 0;
     left: 50%;
     width: 50%;
     transform: translate(-50%);

@@ -385,6 +385,7 @@ header {
 }
 @media (max-width: 39.999em) {
   .thank-you-div {
+    top: 0;
     left: 50%;
     width: 50%;
     transform: translate(-50%);
